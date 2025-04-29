@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#define DEBUG 1
+#define DEBUG 0
 
 typedef struct
 {
@@ -15,7 +15,7 @@ typedef struct
     int32_t* result;
 } s_data;
 
-void* merge_sort(void* arg)
+void* merge_sort_thread(void* arg)
 {
     s_data* data = (s_data*)arg; // Структура входных данных
 
@@ -61,8 +61,8 @@ void* merge_sort(void* arg)
                              .result = result_right};
 
         // Запуск и ожидание завершения
-        pthread_create(&left_thread, NULL, merge_sort, &data_left);
-        pthread_create(&right_thread, NULL, merge_sort, &data_right);
+        pthread_create(&left_thread, NULL, merge_sort_thread, &data_left);
+        pthread_create(&right_thread, NULL, merge_sort_thread, &data_right);
         pthread_join(left_thread, NULL);
         pthread_join(right_thread, NULL);
 
@@ -109,24 +109,36 @@ void* merge_sort(void* arg)
     return NULL;
 }
 
-int main()
+int merge_sort(int32_t* array, uint32_t length, int32_t* result)
 {
-    int32_t array[] = { 53, 34, 42, 69, 47, 48, 59, 89, 55, 99, 2, 94, 46, 22, 98, 14, 25, 62, 71, 43 };
-    int32_t length = sizeof(array) / sizeof(array[0]);
-
+    // Первоначальное указание индексов и запуск потока
     pthread_t thread_id;
-    int32_t* result = (int32_t*)(malloc(sizeof(int32_t) * length));
     s_data data = { .iter = 0,
                     .ar = array,
                     .left_idx = 0,
                     .right_idx = length - 1,
                     .result = result};
-    pthread_create(&thread_id, NULL, merge_sort, &data);
+
+    pthread_create(&thread_id, NULL, merge_sort_thread, &data);
     pthread_join(thread_id, NULL);
+
+    return 0;
+}
+
+int main()
+{
+    // int32_t array[] = { 1 };
+    // int32_t array[] = { 2, 2, 2, 2, 2 };
+    int32_t array[] = { 53, 34, 42, 69, 47, 48, 59, 89, 55, 99, 2, 94, 46, 22, 98, 14, 25, 62, 71, 43 };
+    int32_t length = sizeof(array) / sizeof(array[0]);
+    int32_t* result = (int32_t*)(malloc(sizeof(int32_t) * length));
+
+    merge_sort(array, length, result);
 
     printf("Input array: ");
     for ( int32_t i = 0; i < length; i++ )
         printf("%d ", array[i]);
+
     printf("\nSorted array: ");
     for ( int32_t i = 0; i < length; i++ )
         printf("%d ", result[i]);
