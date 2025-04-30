@@ -11,19 +11,25 @@ int read_loop(int sockfd, char* connect_name)
         exit(EXIT_FAILURE);
     }
 
-    // Дочерний процесс ждет сообщения и выводит его,
-    // а родительский ожидает пользовательского ввода
+    // Родительский процесс ждет сообщения и выводит его,
+    // а дочерний ожидает пользовательского ввода
     while( 1 )
     {
         if ( pid == 0 )
         {
             char buffer[MAX_MESSAGE_LEN];
-            read(sockfd, buffer, sizeof(buffer));
-            printf("[%s]: %s\n", connect_name, buffer);
-        } else {
-            char buffer[MAX_MESSAGE_LEN];
             fgets(buffer, MAX_MESSAGE_LEN, stdin);
             write(sockfd, buffer, strlen(buffer)+1);
+        } else {
+            char buffer[MAX_MESSAGE_LEN];
+            int ret_code = read(sockfd, buffer, sizeof(buffer));
+            if ( ret_code == 0 )
+            {
+                printf(" [E] Connection lost!\n");
+                kill(pid, SIGTERM);
+                return -1;
+            }
+            printf("[%s]: %s\n", connect_name, buffer);
         }
     }
 }

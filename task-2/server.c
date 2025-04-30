@@ -49,8 +49,10 @@ int main()
         exit(EXIT_FAILURE);
     }
 
+    // Вход в цикл чтения-записи
     read_loop(client_fd, "client");
 
+    // Закрытие сокета и удаление файла
     close(sockfd);
     unlink(SOCKET_PATH);
 

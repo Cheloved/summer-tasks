@@ -26,6 +26,7 @@ int main()
         exit(EXIT_FAILURE);
     }
 
+    // Вход в цикл чтения-записи
     read_loop(sockfd, "server");
 
     close(sockfd);
