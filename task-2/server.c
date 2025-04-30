@@ -1,13 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <sys/un.h>
-
-#define SOCKET_PATH "/tmp/task2_socket"
-#define MAX_MESSAGE_LEN 1024
+#include "rw_loop.h"
 
 int main()
 {
@@ -58,30 +49,7 @@ int main()
         exit(EXIT_FAILURE);
     }
 
-    // Разделение на 2 процесса - чтения и записи
-    pid_t pid = fork();
-
-    if ( pid < 0 )
-    {
-        printf(" [ERROR] on fork\n");
-        exit(EXIT_FAILURE);
-    }
-
-    // Дочерний процесс ждет сообщения и выводит его,
-    // а родительский ожидает пользовательского ввода
-    while( 1 )
-    {
-        if ( pid == 0 )
-        {
-            char buffer[MAX_MESSAGE_LEN];
-            read(client_fd, buffer, sizeof(buffer));
-            printf("[client]: %s\n", buffer);
-        } else {
-            char buffer[MAX_MESSAGE_LEN];
-            fgets(buffer, MAX_MESSAGE_LEN, stdin);
-            write(client_fd, buffer, strlen(buffer));
-        }
-    }
+    read_loop(client_fd, "client");
 
     close(sockfd);
     unlink(SOCKET_PATH);

@@ -8,10 +8,10 @@ CFLAGS := -Wall -Wextra -pedantic -O2 -g
 all: always $(BUILD_DIR)/server.bin $(BUILD_DIR)/client.bin
 
 $(BUILD_DIR)/server.bin:
-	$(CC) $(CFLAGS) server.c -o $@
+	$(CC) $(CFLAGS) server.c rw_loop.c -o $@
 	
 $(BUILD_DIR)/client.bin:
-	$(CC) $(CFLAGS) client.c -o $@
+	$(CC) $(CFLAGS) client.c rw_loop.c -o $@
 
 # Всегда создавать директорию build/
 always:
