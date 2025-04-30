@@ -7,6 +7,7 @@
 #include <sys/un.h>
 
 #define SOCKET_PATH "/tmp/task2_socket"
+#define MAX_MESSAGE_LEN 1024
 
 int main()
 {
@@ -34,12 +35,30 @@ int main()
         exit(EXIT_FAILURE);
     }
 
-    // Чтение сообщения от сервера
-    char buffer[1024];
-    read(sockfd, buffer, sizeof(buffer));
-    printf("[server]: %s\n", buffer);
+    // Разделение на 2 процесса - чтения и записи
+    pid_t pid = fork();
 
-    write(sockfd, "Connection established\n", 24);
+    if ( pid < 0 )
+    {
+        printf(" [ERROR] on fork\n");
+        exit(EXIT_FAILURE);
+    }
+
+    // Дочерний процесс ждет сообщения и выводит его,
+    // а родительский ожидает пользовательского ввода
+    while( 1 )
+    {
+        if ( pid == 0 )
+        {
+            char buffer[MAX_MESSAGE_LEN];
+            read(sockfd, buffer, sizeof(buffer));
+            printf("[server]: %s\n", buffer);
+        } else {
+            char buffer[MAX_MESSAGE_LEN];
+            fgets(buffer, MAX_MESSAGE_LEN, stdin);
+            write(sockfd, buffer, strlen(buffer));
+        }
+    }
 
     close(sockfd);
 
