@@ -26,3 +26,6 @@ int method_available(char* method);
 
 // Сортирует файл input способом method и записывает в output
 int sort_file(char* input, char* output, char* method);
+
+// Сохраняет результат в файл
+int save(char* path, char* buffer);

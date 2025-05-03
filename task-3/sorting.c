@@ -119,28 +119,49 @@ int sort_file(char* input, char* output, char* method)
 
     // Сортировка
     long* sorted_idxs = (long*)(malloc(sizeof(long) * lines));
-    // bubble_sort(buffer, idxs, lines, sorted_idxs);
-    // merge_sort(buffer, idxs, lines, sorted_idxs);
-    quick_sort(buffer, idxs, lines, sorted_idxs);
 
-    printf("\nInput array: ");
-    for ( int i = 0; i < lines; i++ )
-        printf("%ld ", idxs[i]);
+    if ( !strcmp(method, "bubble") )
+        bubble_sort(buffer, idxs, lines, sorted_idxs);
 
-    printf("\nSorted array: ");
-    for ( long i = 0; i < lines; i++ )
-        printf("%ld ", sorted_idxs[i]);
-    printf("\n");
+    if ( !strcmp(method, "merge") )
+        merge_sort(buffer, idxs, lines, sorted_idxs);
+    
+    if ( !strcmp(method, "quick") )
+        quick_sort(buffer, idxs, lines, sorted_idxs);
 
+    // Объединение отсортированных индексов строк в единый текст
     char* result_text = (char*)malloc(size);
     lines_concat(buffer, lines, sorted_idxs, result_text);
+
+    // Вывод на экран
     printf("Input:\n%s\n", buffer);
     printf("Result:\n%s\n", result_text);
 
+    // Запись в файл
+    save(output, result_text);
+
+    // Освобождение памяти
     free(buffer);
     free(idxs);
     free(sorted_idxs);
     free(result_text);
+
+    return 0;
+}
+
+// Сохраняет результат в файл
+int save(char* path, char* buffer)
+{
+    FILE* file = fopen(path, "w");
+    if ( file == NULL )
+    {
+        printf(" [E] Невозможно открыть файл %s для записи!\n", path);
+        return -1;
+    }
+
+    fprintf(file, "%s", buffer);
+
+    fclose(file);
 
     return 0;
 }
