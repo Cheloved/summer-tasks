@@ -83,14 +83,10 @@ int get_indexes(char* input, long size, long* result)
 // Проверяет доступность способа сортировки
 int method_available(char* method)
 {
-    if ( strcmp(method, "bubble") != 0 )
-        return -1;
-
-    if ( strcmp(method, "merge") != 0 )
-        return -1;
-
-    if ( strcmp(method, "quick") != 0 )
-        return -1;
+    if ( !strcmp(method, "bubble") ||
+         !strcmp(method, "merge")  ||
+         !strcmp(method, "quick"))
+        return 1;
 
     return 0;
 }
