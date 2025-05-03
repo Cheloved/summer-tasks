@@ -63,7 +63,7 @@ void* merge_sort_thread(void* arg)
         {
             // if ( result_left[left] < result_right[right] ) 
             // Сравнение строк вместо чисел //
-            if ( linecmp(data->input, result_left[left], result_right[right]) ) 
+            if ( linecmp(data->input, result_left[left], result_right[right]) <= 0 ) 
                 data->result[i++] = result_left[left++];
             else
                 data->result[i++] = result_right[right++];

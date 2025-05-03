@@ -9,7 +9,7 @@ int bubble_sort(char* input, long* array, long length, long* result)
     {
         for ( int j = 0; j < length - i - 1; j++ )
         {
-            if ( !linecmp(input, result[j], result[j+1]) ) 
+            if ( linecmp(input, result[j], result[j+1]) >= 0 ) 
             {
                 int buf = result[j];
                 result[j] = result[j+1];

@@ -27,10 +27,11 @@ int linecmp(char* input, long a, long b)
     free(subs_a);
     free(subs_b);
 
-    if ( result >= 0 )
-        return 0;
-    else
-        return 1;
+    // if ( result >= 0 )
+    //     return 0;
+    // else
+    //     return 1;
+    return result;
 }
 
 int lines_concat(char* input, int lines, long* idxs, char* buffer)
