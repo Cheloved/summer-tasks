@@ -33,3 +33,49 @@ int read_file(char* path, long size, char* result)
     fclose(file);
     return 0;
 }
+
+// Возвращает количество непустых строк
+int get_lines_count(char* input, long size)
+{
+    int count = 0;
+    int visible_found = 0;
+    for ( long i = 0; i < size+1; i++ )
+    {
+        if ( (input[i] == '\n' || input[i] == 0) && visible_found )
+        {
+            count++;
+            visible_found = 0;
+            continue;
+        }
+
+        if ( input[i] != ' ' )
+            visible_found = 1;
+    }
+
+    return count;
+}
+
+// Возвращает массив индексов на начало непустых строк
+int get_indexes(char* input, long size, long* result)
+{
+    int count = 0;
+    int start_idx = 0;
+    int visible_found = 0;
+    for ( long i = 0; i < size+1; i++ )
+    {
+        if ( input[i] == '\n' || input[i] == 0 )
+        {
+            if ( visible_found )
+                result[count++] = start_idx;
+
+            start_idx = i+1;
+            visible_found = 0;
+            continue;
+        }
+
+        if ( input[i] != ' ' )
+            visible_found = 1;
+    }
+
+    return 0;
+}
