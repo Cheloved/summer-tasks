@@ -22,7 +22,7 @@ always:
 clean:
 	rm -rf $(BUILD_DIR)
 	rm -f *.o
-	rm output.txt
+	rm -f output.txt
 
 # Не считать all, clean и always за имена файлов при вызове make
 .PHONY: all clean always
