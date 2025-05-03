@@ -8,11 +8,13 @@ CFLAGS := -Wall -Wextra -pedantic -O2 -g
 # Исходные файлы
 C_SRC := $(wildcard *.c)
 
-# Компиляция всех .c файлов в build/main.bin
-all: always $(BUILD_DIR)/main.bin
+all: always $(BUILD_DIR)/short.bin $(BUILD_DIR)/long.bin
 
-$(BUILD_DIR)/main.bin:
-	$(CC) $(CFLAGS) $(C_SRC) -o $@
+$(BUILD_DIR)/short.bin:
+	$(CC) $(CFLAGS) short.c -o $@
+
+$(BUILD_DIR)/long.bin:
+	$(CC) $(CFLAGS) short.c -o $@
 
 # Всегда создавать директорию build/
 always:
