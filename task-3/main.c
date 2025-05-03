@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "sorting.h"
+#include "utils.h"
 
 int print_help()
 {

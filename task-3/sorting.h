@@ -3,6 +3,9 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
+#include "merge.h"
+#include "utils.h"
 
 // Получение размера файла
 long get_file_size(char* path);

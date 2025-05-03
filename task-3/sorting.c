@@ -109,18 +109,36 @@ int sort_file(char* input, char* output, char* method)
     read_file(input, size, buffer);
     printf(" [debug] Содержимое файла:\n%s\n", buffer);
 
-    // Получение количества и индексов начала непустых строк
+    // Получение количества строк
     int lines = get_lines_count(buffer, size);
     printf(" [debug] Кол-во непустых строк: %d\n", lines);
 
-    long* idxs = (long*)malloc(lines);
+    // Получение индексов начала непустых строк
+    long* idxs = (long*)malloc(sizeof(long) * lines);
     get_indexes(buffer, size, idxs);
 
+    // Сортировка
+    long* sorted_idxs = (long*)(malloc(sizeof(long) * lines));
+    merge_sort(buffer, idxs, lines, sorted_idxs);
+
+    printf("\nInput array: ");
     for ( int i = 0; i < lines; i++ )
         printf("%ld ", idxs[i]);
 
+    printf("\nSorted array: ");
+    for ( long i = 0; i < lines; i++ )
+        printf("%ld ", sorted_idxs[i]);
+    printf("\n");
+
+    char* result_text = (char*)malloc(size);
+    lines_concat(buffer, lines, sorted_idxs, result_text);
+    printf("Input:\n%s\n", buffer);
+    printf("Result:\n%s\n", result_text);
+
     free(buffer);
     free(idxs);
+    free(sorted_idxs);
+    free(result_text);
 
     return 0;
 }
