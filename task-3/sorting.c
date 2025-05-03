@@ -119,7 +119,8 @@ int sort_file(char* input, char* output, char* method)
 
     // Сортировка
     long* sorted_idxs = (long*)(malloc(sizeof(long) * lines));
-    merge_sort(buffer, idxs, lines, sorted_idxs);
+    // merge_sort(buffer, idxs, lines, sorted_idxs);
+    bubble_sort(buffer, idxs, lines, sorted_idxs);
 
     printf("\nInput array: ");
     for ( int i = 0; i < lines; i++ )

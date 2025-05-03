@@ -12,7 +12,7 @@ void* merge_sort_thread(void* arg)
         long mid_idx = data->left_idx + (length-1) / 2;
 
         if ( DEBUG )
-            printf(" [debug] Iter: %d, left: %d, right: %d, mid: %d -> (%d, %d) and (%d, %d)\n", data->iter, 
+            printf(" [debug] Iter: %d, left: %ld, right: %ld, mid: %ld -> (%ld, %ld) and (%ld, %ld)\n", data->iter, 
                     data->left_idx,
                     data->right_idx,
                     mid_idx,
@@ -80,7 +80,7 @@ void* merge_sort_thread(void* arg)
         {
             printf(" [debug] Iter: %d, result: ", data->iter);
             for ( long i = data->left_idx; i <= data->right_idx; i++ )
-                printf("%d ", data->result[i - data->left_idx]);
+                printf("%ld ", data->result[i - data->left_idx]);
             printf("\n");
         }
 
@@ -92,7 +92,7 @@ void* merge_sort_thread(void* arg)
         data->result[0] = data->ar[data->left_idx];
 
         if ( DEBUG )
-            printf(" [debug] LAST! Iter: %d, left: %d, right: %d\n", data->iter, data->left_idx, data->right_idx);
+            printf(" [debug] LAST! Iter: %d, left: %ld, right: %ld\n", data->iter, data->left_idx, data->right_idx);
     }
 
     return NULL;
