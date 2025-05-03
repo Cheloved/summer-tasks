@@ -1,0 +1,21 @@
+apple
+Orange
+banana
+Pear
+grape
+Apple with space
+123melon
+plum_purple
+peach!
+kiwi
+apricot
+   
+ALGORITHM
+sorting
+test
+STRING
+!@#$%^&*()
+
+zoo
+orange
+TEST
