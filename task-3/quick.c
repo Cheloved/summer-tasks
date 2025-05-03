@@ -2,6 +2,9 @@
 
 int quick_sort(char* input, long* array, long length, long* result)
 {
+    if ( array == NULL || length < 1 )
+        return 0;
+
     if ( length == 1 )
     {
         result[0] = array[0];
@@ -10,13 +13,13 @@ int quick_sort(char* input, long* array, long length, long* result)
 
     long pivot = array[length / 2];
 
-    long* left = (long*)malloc(sizeof(long) * length);
+    long* left = (long*)calloc(length, sizeof(long));
     int left_length = 0;
 
-    long* middle = (long*)malloc(sizeof(long) * length);
+    long* middle = (long*)calloc(length, sizeof(long));
     int middle_length = 0;
 
-    long* right = (long*)malloc(sizeof(long) * length);
+    long* right = (long*)calloc(length, sizeof(long));
     int right_length = 0;
 
     for ( long i = 0; i < length; i++ )
@@ -35,6 +38,7 @@ int quick_sort(char* input, long* array, long length, long* result)
         printf(" >> Input: ");
         for ( int i = 0; i < length; i++ )
             printf("%ld ", array[i]);
+        printf("\n >> Pivot: %ld\n", pivot);
         printf("\n >> Left: ");
         for ( int i = 0; i < left_length; i++ )
             printf("%ld ", left[i]);
