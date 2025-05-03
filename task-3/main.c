@@ -4,32 +4,20 @@
 
 int print_help()
 {
+    printf(" === Сортировка строк текстового файла === \n");
+    printf("Использование: main.bin input.txt output.txt method\n");
+    printf("Доступные методы: bubble, merge, quick\n");
     return 0;
 }
 
 int main(int argc, char** argv)
 {
-    // if ( argc != 4 )
-    // {
-    //     print_help();
-    //     return -1;
-    // }
-    
-    long size = get_file_size(argv[1]);
-    char* buffer = (char*)malloc(size+1);
-    read_file(argv[1], size, buffer);
-    printf(" [debug] Содержимое файла:\n%s\n", buffer);
+    if ( argc != 4 )
+    {
+        print_help();
+        return -1;
+    }
 
-    int lines = get_lines_count(buffer, size);
-    printf(" [debug] Кол-во непустых строк: %d\n", lines);
-
-    long* idxs = (long*)malloc(lines);
-    get_indexes(buffer, size, idxs);
-
-    for ( int i = 0; i < lines; i++ )
-        printf("%ld ", idxs[i]);
-
-    free(buffer);
-    free(idxs);
+    sort_file(argv[1], argv[2], argv[3]);
     return 0;
 }

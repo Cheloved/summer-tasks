@@ -79,3 +79,48 @@ int get_indexes(char* input, long size, long* result)
 
     return 0;
 }
+
+// Проверяет доступность способа сортировки
+int method_available(char* method)
+{
+    if ( strcmp(method, "bubble") != 0 )
+        return -1;
+
+    if ( strcmp(method, "merge") != 0 )
+        return -1;
+
+    if ( strcmp(method, "quick") != 0 )
+        return -1;
+
+    return 0;
+}
+
+// Сортирует файл input способом method и записывает в output
+int sort_file(char* input, char* output, char* method)
+{
+    if ( !method_available(method) )
+    {
+        printf(" [E] Метод сортировки %s не поддерживается", method);
+        return -1;
+    }
+    // Получение размера файла и запись в буффер
+    long size = get_file_size(input);
+    char* buffer = (char*)malloc(size+1);
+    read_file(input, size, buffer);
+    printf(" [debug] Содержимое файла:\n%s\n", buffer);
+
+    // Получение количества и индексов начала непустых строк
+    int lines = get_lines_count(buffer, size);
+    printf(" [debug] Кол-во непустых строк: %d\n", lines);
+
+    long* idxs = (long*)malloc(lines);
+    get_indexes(buffer, size, idxs);
+
+    for ( int i = 0; i < lines; i++ )
+        printf("%ld ", idxs[i]);
+
+    free(buffer);
+    free(idxs);
+
+    return 0;
+}
