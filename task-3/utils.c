@@ -27,10 +27,6 @@ int linecmp(char* input, long a, long b)
     free(subs_a);
     free(subs_b);
 
-    // if ( result >= 0 )
-    //     return 0;
-    // else
-    //     return 1;
     return result;
 }
 

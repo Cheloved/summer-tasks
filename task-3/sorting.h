@@ -6,6 +6,7 @@
 #include <stdint.h>
 #include "bubble.h"
 #include "merge.h"
+#include "quick.h"
 #include "utils.h"
 
 // Получение размера файла
