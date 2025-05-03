@@ -1,0 +1,50 @@
+#include "utils.h"
+
+int get_line_len(char* input, long idx)
+{
+    int count = 0;
+    while ( input[idx] != '\n' && input[idx] != 0 )
+    {
+        count++;
+        idx++;
+    }
+
+    return count;
+}
+
+int linecmp(char* input, long a, long b)
+{
+    int len_a = get_line_len(input, a); 
+    int len_b = get_line_len(input, b); 
+
+    char* subs_a = (char*)malloc(len_a+1);
+    char* subs_b = (char*)malloc(len_b+1);
+
+    strncpy(subs_a, input+a, len_a);
+    strncpy(subs_b, input+b, len_b);
+
+    int result = strcmp(subs_a, subs_b);
+    free(subs_a);
+    free(subs_b);
+
+    if ( result >= 0 )
+        return 0;
+    else
+        return 1;
+}
+
+int lines_concat(char* input, int lines, long* idxs, char* buffer)
+{
+    long current_buffer = 0;
+    for ( int i = 0; i < lines; i++ )
+    {
+        long current_input = idxs[i];
+        while ( input[current_input] != '\n' && input[current_input] != 0 )
+        {
+            buffer[current_buffer++] = input[current_input++];
+        }
+        buffer[current_buffer++] = '\n';
+    }
+
+    return 0;
+}
