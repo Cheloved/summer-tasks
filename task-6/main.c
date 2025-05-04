@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <sys/stat.h>
+#include <time.h>
 
 // === Содержимое структуры, которую получает stat() ===
 // struct stat {
@@ -29,7 +30,7 @@
 
 int print_info(char* path)
 {
-    printf(" === %s ===\n", path);
+    printf("\n === %s ===\n", path);
 
     struct stat file_stat;
     if ( stat(path, &file_stat) < 0 )
@@ -37,6 +38,69 @@ int print_info(char* path)
         perror("Ошбика вызова stat()");
         return -1;
     }
+
+    printf("%-44s | %s\n", "Свойство", "Значение");
+
+    printf("%-46s | %lu\n",
+            "ID устройства, которое содержит файл",
+            (unsigned long)file_stat.st_dev);
+
+    printf("%-46s | %lu\n",
+            "Номер инода",
+            (unsigned long)file_stat.st_ino);
+
+    printf("%-57s | %u (0%o)\n",
+            "Тип файла и права доступа",
+            file_stat.st_mode, file_stat.st_mode);
+
+    printf("%-44s |", "Тип файла");
+    switch ( file_stat.st_mode & S_IFMT )
+    {
+        case S_IFBLK: printf(" %s\n", "Блочное уст-во"); break;
+        case S_IFCHR: printf(" %s\n", "Символьное уст-во"); break;
+        case S_IFDIR: printf(" %s\n", "Директория"); break;
+        case S_IFIFO: printf(" %s\n", "FIFO/pipe"); break;
+        case S_IFLNK: printf(" %s\n", "Символьная ссылка"); break;
+        case S_IFREG: printf(" %s\n", "Обычный файл"); break;
+        case S_IFSOCK: printf(" %s\n", "Сокет"); break;
+        default: printf(" %s\n", "Неизвестный тип");
+    }
+
+    printf("%-59s | %lu\n",
+            "Количество жестких ссылок",
+            (unsigned long)file_stat.st_nlink);
+
+    printf("%-45s | %d\n",
+            "UID владельца",
+            file_stat.st_uid);
+
+    printf("%-45s | %d\n",
+            "GID владельца",
+            file_stat.st_gid);
+
+    printf("%-54s | %ld\n",
+            "Размер файла (в байтах)",
+            (long)file_stat.st_size);
+
+    printf("%-58s | %ld\n",
+            "Размер блока ввода-вывода",
+            (long)file_stat.st_blksize);
+
+    printf("%-62s | %ld\n",
+            "Количество выделенных блоков",
+            (long)file_stat.st_blocks);
+
+    printf("%-58s | %s",
+            "Время последнего доступа",
+            ctime(&file_stat.st_atim.tv_sec));
+
+    printf("%-60s | %s",
+            "Время последнего изменения",
+            ctime(&file_stat.st_mtim.tv_sec));
+
+    printf("%-67s | %s",
+            "Время последнего изменения статуса",
+            ctime(&file_stat.st_mtim.tv_sec));
 
     return 0;
 }
