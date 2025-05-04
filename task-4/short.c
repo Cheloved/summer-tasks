@@ -3,7 +3,7 @@
 
 int main(int argc, char** argv)
 {
-    printf("Correct short options: ");
+    printf("Correct options: ");
     int opt;
     while ( (opt = getopt(argc, argv, "mcst")) != -1 )
     {

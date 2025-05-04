@@ -14,7 +14,7 @@ $(BUILD_DIR)/short.bin:
 	$(CC) $(CFLAGS) short.c -o $@
 
 $(BUILD_DIR)/long.bin:
-	$(CC) $(CFLAGS) short.c -o $@
+	$(CC) $(CFLAGS) long.c -o $@
 
 # Всегда создавать директорию build/
 always:
