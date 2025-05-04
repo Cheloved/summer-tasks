@@ -27,3 +27,32 @@ int read_matrix(char* path, int** result, int MAX_ROWS, int MAX_COLS,
 
     return 0;
 }
+
+int generate_matrix(char* path, int size, int min, int max)
+{
+    srand((unsigned int)time(NULL));
+
+    FILE* file = fopen(path, "w");
+    if ( !file )
+    {
+        fprintf(stderr, " [E] Не получилось открыть файл для записи\n");
+        return -1;
+    }
+
+    for ( int i = 0; i < size; i++ )
+    {
+        for ( int j = 0; j < size; j++ )
+        {
+            int value = rand() % (max - min + 1) + min;
+            fprintf(file, "%d", value);
+
+            if ( j < size-1 )
+                fprintf(file, " ");
+        }
+        fprintf(file, "\n");
+    }
+
+    fclose(file);
+    printf(" [i] Матрица сгенерирована в %s!\n", path);
+    return 0;
+}
