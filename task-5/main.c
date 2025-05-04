@@ -4,6 +4,7 @@
 #include <string.h>
 #include <dlfcn.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 // extern const char* sys_errlist[];
 
@@ -24,7 +25,7 @@ int main()
         fprintf(stderr, "Ошибка. errno: %d\n", errno);
 
     } else {
-        fclose(file);
+        close(file);
     }
 
     // Вывод ошибки через sys_errlist[errno]
@@ -62,7 +63,7 @@ int main()
     if ( file == -1 )
         fprintf(stderr, "Ошибка из sys_errlist[errno]: %s\n", sys_errlist_ptr[0][errno]);
     else
-        fclose(file);
+        close(file);
 
     dlclose(handle); 
     return 0;
