@@ -18,5 +18,7 @@ int main()
     print_mat(mat_b, 4);
     matrix_multiply_square(4, mat_a, mat_b, result);
 
+    print_mat(result, 4);
+
     return 0;
 }

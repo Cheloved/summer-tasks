@@ -1,11 +1,11 @@
 #pragma once
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-#include "reading.h"
-
-extern int global_i;
-extern int global_j;
+extern int global_row;
+extern int global_col;
 
 // Инициализация динамической матрицы
 int** init_mat_square(int size);
