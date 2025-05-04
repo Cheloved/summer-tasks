@@ -48,7 +48,7 @@ int main(int argc, char** argv)
     if ( !file )
     {
         perror(" [E] Ошибка при чтении файла");
-        return -1;
+        return -2;
     }
 
     long file_size = get_file_size(file);
@@ -57,7 +57,7 @@ int main(int argc, char** argv)
     if ( pid < 0 )
     {
         fprintf(stderr, " [E] Ошибка при fork()\n");
-        return -1;
+        return -3;
     }
 
     FILE* out;
@@ -69,7 +69,7 @@ int main(int argc, char** argv)
     if ( !out )
     {
         perror(" [E] Ошибка при открытии файла записи");
-        return -1;
+        return -4;
     }
 
     copy_from_to(file, file_size, out);
