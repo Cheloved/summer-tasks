@@ -3,28 +3,29 @@
 #include <errno.h>
 #include <string.h>
 #include <dlfcn.h>
+#include <unistd.h>
 
 // extern const char* sys_errlist[];
 
 int main()
 {
     // Попытка открыть несуществующий файл
-    FILE* file = fopen("not_exist.txt", "r");
+    int file = open("not_exist.txt", O_RDONLY);
 
-    // Вывод ошибки через perror()
-    if ( !file )
+    if ( file == -1 )
+    {
+        // Вывод ошибки через perror()
         perror("Ошибка из perror()");
 
-    // Вывод ошибки через strerror()
-    if ( !file )
+        // Вывод ошибки через strerror()
         fprintf(stderr, "Ошибка из strerror(): %s\n", strerror(errno));
 
-    // Вывод только errno
-    if ( !file )
+        // Вывод только errno
         fprintf(stderr, "Ошибка. errno: %d\n", errno);
 
-    if ( file )
+    } else {
         fclose(file);
+    }
 
     // Вывод ошибки через sys_errlist[errno]
     // if ( !file )
@@ -57,12 +58,12 @@ int main()
         return -1;
     } 
 
-    file = fopen("not_exist.txt", "r");
-    if ( !file )
+    file = open("not_exist.txt", O_RDONLY);
+    if ( file == -1 )
         fprintf(stderr, "Ошибка из sys_errlist[errno]: %s\n", sys_errlist_ptr[0][errno]);
-
-    if ( file )
+    else
         fclose(file);
+
     dlclose(handle); 
     return 0;
 }
