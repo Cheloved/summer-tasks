@@ -10,6 +10,9 @@ extern int global_col;
 // Инициализация динамической матрицы
 int** init_mat_square(int size);
 
+// Освобождение памяти
+int free_mat_square(int** mat, int size);
+
 // Умножение матриц
 int matrix_multiply_square(int size, int** a, int** b, int** result);
 

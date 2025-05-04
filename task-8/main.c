@@ -20,5 +20,9 @@ int main()
 
     print_mat(result, 4);
 
+    free_mat_square(mat_a, 4);
+    free_mat_square(mat_b, 4);
+    free_mat_square(result, 4);
+
     return 0;
 }

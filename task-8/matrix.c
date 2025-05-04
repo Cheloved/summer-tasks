@@ -25,6 +25,18 @@ int** init_mat_square(int size)
     return result;
 }
 
+int free_mat_square(int** mat, int size)
+{
+    for ( int i = 0; i < size; i++ )
+        if ( mat[i] ) 
+            free(mat[i]);
+
+    if ( mat )
+        free(mat);
+
+    return 0;
+}
+
 int matrix_multiply_square(int size, int** a, int** b, int** result)
 {
     for ( global_row = 0; global_row < size; global_row++ )
