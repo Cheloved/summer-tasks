@@ -14,8 +14,8 @@ int is_empty(s_stack stack);
 
 int is_full(s_stack stack);
 
-int push(s_stack stack, char* value);
+int push(s_stack* stack, char* value);
 
-int pop(s_stack stack, char* result);
+int pop(s_stack* stack, char* result);
 
 int peek(s_stack stack, char* result);
