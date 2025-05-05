@@ -11,4 +11,4 @@ extern char* OPERATORS[];
 
 int is_operator(char* token);
 
-int to_postfix(char** tokens, int size);
+int to_postfix(char** tokens, int size, char** postfix);

@@ -26,7 +26,7 @@ int get_priority(char* operator)
     return -1;
 }
 
-int to_postfix(char** tokens, int size)
+int to_postfix(char** tokens, int size, char** postfix)
 {
     s_stack stack = { init_char_arr(size, MAX_TOKEN_LEN), -1, MAX_TOKENS };
 
@@ -136,10 +136,9 @@ int to_postfix(char** tokens, int size)
     while ( !is_empty(stack) )
         pop(&stack, queue[++queue_top]);
 
-    printf("Итоговая очередь: ");
+    // Сохранение очереди в результат
     for ( int i = 0; i < queue_top+1; i++ )
-        printf("%s ", queue[i]);
-    printf("\n");
+        strcpy(postfix[i], queue[i]);
 
     return 0;
 }

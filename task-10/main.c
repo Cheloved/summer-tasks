@@ -19,7 +19,13 @@ int main()
         printf("\"%s\" ", tokens[i]);
     printf("\n");
 
-    to_postfix(tokens, tokens_len);
+    char** postfix = init_char_arr(tokens_len, MAX_TOKEN_LEN);
+    to_postfix(tokens, tokens_len, postfix);
+
+    printf("В постфиксной нотации: ");
+    for ( int i = 0; i < tokens_len; i++ )
+        printf("%s ", postfix[i]);
+    printf("\n");
 
     return 0;
 }
