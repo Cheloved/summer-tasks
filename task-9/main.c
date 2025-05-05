@@ -35,5 +35,8 @@ int main(int argc, char** argv)
     for ( int i = 0; i < result_size; i++ )
         printf("%d ", result[i]);
 
+    free(seq);
+    free(result);
+
     return 0;
 }
