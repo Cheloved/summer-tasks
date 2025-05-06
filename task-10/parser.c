@@ -215,7 +215,7 @@ int evaluate(char** tokens, int size)
                 pop(&stack, buffer);
                 result = 1 - atoi(buffer);
 
-                snprintf(buffer, sizeof(MAX_TOKEN_LEN), "%d", result);
+                snprintf(buffer, MAX_TOKEN_LEN, "%d", result);
                 push(&stack, buffer);
                 continue;
             }
