@@ -1,3 +1,14 @@
+/**
+ * @file quick.c
+ * @brief Реализация алгоритма быстрой сортировки строк.
+ *
+ * Файл содержит реализацию функции `quick_sort()`, которая рекурсивно
+ * сортирует строки по их индексам, используя разделение на подмассивы
+ * относительно опорного элемента. Для сравнения используется linecmp().
+ *
+ * @author Ракитин Илья Алексеевич
+ */
+
 #include "quick.h"
 
 int quick_sort(char* input, long* array, long length, long* result)
@@ -11,8 +22,10 @@ int quick_sort(char* input, long* array, long length, long* result)
         return 0;
     }
 
+    // Определение опорного элемента
     long pivot = array[length / 2];
 
+    // === Выделение памяти под три части массива === //
     long* left = (long*)calloc(length, sizeof(long));
     int left_length = 0;
 
@@ -22,6 +35,7 @@ int quick_sort(char* input, long* array, long length, long* result)
     long* right = (long*)calloc(length, sizeof(long));
     int right_length = 0;
 
+    // === Распределение массива по трем частям === //
     for ( long i = 0; i < length; i++ )
     {
         int cmp = linecmp(input, pivot, array[i]);
@@ -33,24 +47,7 @@ int quick_sort(char* input, long* array, long length, long* result)
             right[right_length++] = array[i];
     }
 
-    if ( DEBUG )
-    {
-        printf(" >> Input: ");
-        for ( int i = 0; i < length; i++ )
-            printf("%ld ", array[i]);
-        printf("\n >> Pivot: %ld\n", pivot);
-        printf("\n >> Left: ");
-        for ( int i = 0; i < left_length; i++ )
-            printf("%ld ", left[i]);
-        printf("\n >> Middle: ");
-        for ( int i = 0; i < middle_length; i++ )
-            printf("%ld ", middle[i]);
-        printf("\n >> Right: ");
-        for ( int i = 0; i < right_length; i++ )
-            printf("%ld ", right[i]);
-        printf("\n\n");
-    }
-
+    // === Рекурсивная сортировка левой и правой частей === //
     long* left_result   = (long*)malloc(sizeof(long) * left_length);
     if ( left_length > 1 )
     {
@@ -67,6 +64,7 @@ int quick_sort(char* input, long* array, long length, long* result)
         right_result[0] = right[0];
     }
 
+    // === Объединение массивов === //
     int current = 0;
     for ( int i = 0; i < right_length; i++ )
         result[current++] = right_result[i]; 
@@ -75,6 +73,7 @@ int quick_sort(char* input, long* array, long length, long* result)
     for ( int i = 0; i < left_length; i++ )
         result[current++] = left_result[i]; 
 
+    // Освобождение памяти
     free(left);
     free(middle);
     free(right);
