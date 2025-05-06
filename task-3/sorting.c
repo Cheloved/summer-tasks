@@ -115,6 +115,11 @@ int sort_file(char* input, char* output, char* method)
     // Получение размера файла и запись в буффер
     long size = get_file_size(input);
     char* buffer = (char*)malloc(size+1);
+    if ( !buffer )
+    {
+        fprintf(stderr, " [E] Ошибка при выделении памяти в sort_file()\n");
+        return -2;
+    }
     read_file(input, size, buffer);
 
     // Получение количества строк
@@ -122,10 +127,23 @@ int sort_file(char* input, char* output, char* method)
 
     // Получение индексов начала непустых строк
     long* idxs = (long*)malloc(sizeof(long) * lines);
+    if ( !idxs )
+    {
+        fprintf(stderr, " [E] Ошибка при выделении памяти в sort_file()\n");
+        free(buffer);
+        return -2;
+    }
     get_indexes(buffer, size, idxs);
 
     // Сортировка
     long* sorted_idxs = (long*)(malloc(sizeof(long) * lines));
+    if ( !sorted_idxs )
+    {
+        fprintf(stderr, " [E] Ошибка при выделении памяти в sort_file()\n");
+        free(buffer);
+        free(idxs);
+        return -2;
+    }
 
     if ( !strcmp(method, "bubble") )
         bubble_sort(buffer, idxs, lines, sorted_idxs);
@@ -138,6 +156,14 @@ int sort_file(char* input, char* output, char* method)
 
     // Объединение отсортированных индексов строк в единый текст
     char* result_text = (char*)malloc(size);
+    if ( !sorted_idxs )
+    {
+        fprintf(stderr, " [E] Ошибка при выделении памяти в sort_file()\n");
+        free(buffer);
+        free(idxs);
+        free(sorted_idxs);
+        return -2;
+    }
     lines_concat(buffer, lines, sorted_idxs, result_text);
 
     // Вывод на экран

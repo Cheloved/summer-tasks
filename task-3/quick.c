@@ -35,6 +35,12 @@ int quick_sort(char* input, long* array, long length, long* result)
     long* right = (long*)calloc(length, sizeof(long));
     int right_length = 0;
 
+    if ( !left || !middle || !right )
+    {
+        fprintf(stderr, " [E] Ошибка при выделении памяти в quick_sort()\n");
+        return -1;
+    }
+
     // === Распределение массива по трем частям === //
     for ( long i = 0; i < length; i++ )
     {
@@ -48,19 +54,31 @@ int quick_sort(char* input, long* array, long length, long* result)
     }
 
     // === Рекурсивная сортировка левой и правой частей === //
-    long* left_result   = (long*)malloc(sizeof(long) * left_length);
+    long* left_result = (long*)malloc(sizeof(long) * left_length);
+    if ( !left_result )
+    {
+        fprintf(stderr, " [E] Ошибка при выделении памяти в quick_sort()\n");
+        return -1;
+    }
+
     if ( left_length > 1 )
     {
         quick_sort(input, left, left_length, left_result);
-    } else {
+    } else if ( left_length == 1 ) {
         left_result[0] = left[0];
     }
 
-    long* right_result   = (long*)malloc(sizeof(long) * right_length);
+    long* right_result = (long*)malloc(sizeof(long) * right_length);
+    if ( !right_result )
+    {
+        fprintf(stderr, " [E] Ошибка при выделении памяти в quick_sort()\n");
+        return -1;
+    }
+
     if ( right_length > 1 )
     {
         quick_sort(input, right, right_length, right_result);
-    } else {
+    } else if ( right_length == 1 ) {
         right_result[0] = right[0];
     }
 
