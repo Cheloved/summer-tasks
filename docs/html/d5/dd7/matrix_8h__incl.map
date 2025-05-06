@@ -1,9 +1,0 @@
-<map id="task&#45;8/matrix.h" name="task&#45;8/matrix.h">
-<area shape="rect" id="Node000001" title="Заголовочный файл для работы с квадратными матрицами." alt="" coords="69,5,184,35"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,83,69,113"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,38,67,75,63,71,108,34"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="93,83,160,113"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,36,129,67,124,67,124,36"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="184,83,255,113"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="146,34,192,71,189,75,142,38"/>
-</map>

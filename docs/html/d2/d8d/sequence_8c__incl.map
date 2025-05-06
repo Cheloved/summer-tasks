@@ -1,7 +1,0 @@
-<map id="task&#45;9/sequence.c" name="task&#45;9/sequence.c">
-<area shape="rect" id="Node000001" title="Реализация алгоритма поиска максимальной возрастающей подпоследовательности." alt="" coords="5,5,139,35"/>
-<area shape="rect" id="Node000002" href="$db/df3/sequence_8h.html" title="Заголовочный файл для поиска максимальной возрастающей подпоследовательности." alt="" coords="25,83,119,113"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,36,75,67,69,67,69,36"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="40,161,104,190"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="75,113,75,145,69,145,69,113"/>
-</map>

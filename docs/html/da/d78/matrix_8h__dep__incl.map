@@ -1,7 +1,0 @@
-<map id="task&#45;8/matrix.h" name="task&#45;8/matrix.h">
-<area shape="rect" id="Node000001" title="Заголовочный файл для работы с квадратными матрицами." alt="" coords="65,5,180,35"/>
-<area shape="rect" id="Node000002" href="$d6/d5c/task-8_2main_8c.html" title="Пример работы с обработкой сигналов и умножением матриц." alt="" coords="5,83,109,113"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,49,71,84,67,81,98,45"/>
-<area shape="rect" id="Node000003" href="$dc/dca/matrix_8c.html" title="Реализация функций для работы с квадратными матрицами." alt="" coords="132,83,246,113"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="147,45,179,81,175,84,143,49"/>
-</map>

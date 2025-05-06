@@ -1,9 +1,0 @@
-<map id="task&#45;2/rw_loop.h" name="task&#45;2/rw_loop.h">
-<area shape="rect" id="Node000001" title="Объявления функций и констант для работы с циклом чтения/записи через UNIX&#45;сокеты." alt="" coords="135,5,259,35"/>
-<area shape="rect" id="Node000002" href="$dd/d93/client_8c.html" title="Пример клиента, использующего UNIX&#45;сокеты для межпроцессного взаимодействия (IPC)." alt="" coords="5,83,112,113"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,45,86,85,83,80,157,40"/>
-<area shape="rect" id="Node000003" href="$d1/d7b/rw__loop_8c.html" title="Реализация функции read_loop() для работы с циклом чтения/записи через UNIX&#45;сокет." alt="" coords="136,83,258,113"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,51,200,82,194,82,194,51"/>
-<area shape="rect" id="Node000004" href="$d1/d20/server_8c.html" title="Пример сервера, использующего UNIX&#45;сокеты для межпроцессного взаимодействия (IPC)." alt="" coords="283,83,394,113"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="238,40,313,80,311,85,236,45"/>
-</map>

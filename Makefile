@@ -16,9 +16,11 @@ clean:
 		$(MAKE) -C $$dir clean || true; \
 	done
 
+# Сгенерировать документацию
 gen_docs:
 	doxygen Doxyfile
 
+# Удалить документацию
 clean_docs:
 	rm -rf docs/*
 

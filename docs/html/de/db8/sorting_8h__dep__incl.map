@@ -1,7 +1,0 @@
-<map id="task&#45;3/sorting.h" name="task&#45;3/sorting.h">
-<area shape="rect" id="Node000001" title="Общие функции для работы с текстовыми файлами и управления сортировкой строк." alt="" coords="64,5,183,35"/>
-<area shape="rect" id="Node000002" href="$d6/db8/task-3_2main_8c.html" title="Точка входа программы сортировки строк текстового файла." alt="" coords="5,83,109,113"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,49,71,84,67,81,99,45"/>
-<area shape="rect" id="Node000003" href="$db/dd8/sorting_8c.html" title="Реализация общих функций для работы с текстовыми файлами и сортировки строк." alt="" coords="133,83,250,113"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,45,181,81,177,84,145,48"/>
-</map>

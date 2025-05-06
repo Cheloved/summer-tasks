@@ -1,6 +1,0 @@
-<map id="merge_sort_thread" name="merge_sort_thread">
-<area shape="rect" id="Node000001" title="сортировка, выполняемая отдельными потоками" alt="" coords="5,29,146,59"/>
-<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="45,30,41,20,45,11,57,5,76,3,96,5,107,12,104,16,94,10,75,8,58,10,49,15,46,20,50,28"/>
-<area shape="rect" id="Node000002" href="$d4/dbc/task-1_2main_8c.html#a2877f21864f73213a6ec83e1fd4b850e" title="объединяет массивы l и r в result" alt="" coords="194,29,300,59"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,42,178,42,178,47,146,47"/>
-</map>

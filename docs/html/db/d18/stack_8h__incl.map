@@ -1,7 +1,0 @@
-<map id="task&#45;10/stack.h" name="task&#45;10/stack.h">
-<area shape="rect" id="Node000001" title="Заголовочный файл, реализующий стек строк." alt="" coords="25,5,140,35"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,83,69,113"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,37,56,71,51,68,72,34"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="93,83,162,113"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="93,34,114,68,109,71,89,37"/>
-</map>

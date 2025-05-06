@@ -1,5 +1,0 @@
-<map id="peek" name="peek">
-<area shape="rect" id="Node000001" title="Получает верхний элемент стека без его удаления." alt="" coords="5,5,58,35"/>
-<area shape="rect" id="Node000002" href="$d3/dbb/stack_8c.html#a5d65527ccfa3883a501727f6d0637381" title="Проверяет, является ли стек пустым." alt="" coords="106,5,182,35"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,18,90,18,90,23,58,23"/>
-</map>

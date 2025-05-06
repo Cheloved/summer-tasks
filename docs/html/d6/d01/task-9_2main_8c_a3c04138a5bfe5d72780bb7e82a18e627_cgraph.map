@@ -1,7 +1,0 @@
-<map id="main" name="main">
-<area shape="rect" id="Node000001" title="Точка входа программы." alt="" coords="5,32,57,62"/>
-<area shape="rect" id="Node000002" href="$d4/d43/sequence_8c.html#ac5e418fd734d95df5f2e1dc922c4b809" title="Находит самую длинную возрастающую подпоследовательность с наибольшей суммой." alt="" coords="105,5,210,35"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="56,39,89,32,90,37,57,44"/>
-<area shape="rect" id="Node000003" href="$df/d0a/io_8c.html#aa4f4dc3ad731c98c15b4a970db6e68f5" title="Считывает числовую последовательность из текстового файла." alt="" coords="119,59,196,88"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="57,49,104,60,103,65,56,55"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="bubble_sort" name="bubble_sort">
-<area shape="rect" id="Node000001" title="Пузырьковая сортировка массива индексов строк." alt="" coords="5,5,101,35"/>
-<area shape="rect" id="Node000002" href="$d3/d91/utils_8c.html#a3a3b23666dbdc2c1d11be1e20d20d9b9" title="Сравнивает две строки по их начальным индексам в общем буфере." alt="" coords="149,5,218,35"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,18,133,18,133,23,101,23"/>
-<area shape="rect" id="Node000003" href="$d3/d91/utils_8c.html#a6766b4a0d3dc7900ae86258511e1faf4" title="Получает длину строки, начинающейся с заданного индекса." alt="" coords="266,5,361,35"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="219,18,251,18,251,23,219,23"/>
-</map>

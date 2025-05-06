@@ -1,8 +1,0 @@
-<map id="quick_sort" name="quick_sort">
-<area shape="rect" id="Node000001" title="Быстрая сортировка массива индексов строк." alt="" coords="5,29,90,59"/>
-<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="25,30,21,20,24,11,33,5,48,3,63,5,71,12,68,16,61,10,47,8,35,10,29,14,27,20,30,28"/>
-<area shape="rect" id="Node000002" href="$d3/d91/utils_8c.html#a3a3b23666dbdc2c1d11be1e20d20d9b9" title="Сравнивает две строки по их начальным индексам в общем буфере." alt="" coords="138,29,207,59"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,42,122,42,122,47,90,47"/>
-<area shape="rect" id="Node000003" href="$d3/d91/utils_8c.html#a6766b4a0d3dc7900ae86258511e1faf4" title="Получает длину строки, начинающейся с заданного индекса." alt="" coords="255,29,350,59"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="208,42,240,42,240,47,208,47"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="task&#45;10/dynamic.h" name="task&#45;10/dynamic.h">
-<area shape="rect" id="Node000001" title="Заголовочный файл для работы с динамическими двумерными массивами строк." alt="" coords="14,5,148,35"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,83,69,113"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,37,55,71,51,68,70,34"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="93,83,160,113"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="92,34,112,68,108,71,87,37"/>
-</map>
