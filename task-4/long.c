@@ -26,6 +26,9 @@
  */
 int contain(char** array, int length, char* element)
 {
+    if ( !array || !element )
+        return -1;
+
     for ( int i = 0; i < length; i++ )
         if ( !strcmp(array[i], element) )
             return 1;
@@ -45,7 +48,7 @@ int contain(char** array, int length, char* element)
  */
 void handle_wrong_long(const char* name, char* val, char** correct, int len)
 {
-    printf("\n [E] --%s can't be %s!\nAvailable values: ", name, val);
+    fprintf(stderr, "\n [E] --%s can't be %s!\nAvailable values: ", name, val);
     for ( int i = 0; i < len; i++ )
         printf("%s ", correct[i]);
     exit(1);
