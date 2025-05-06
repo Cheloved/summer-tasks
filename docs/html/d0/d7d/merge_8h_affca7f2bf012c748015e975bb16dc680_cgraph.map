@@ -1,0 +1,7 @@
+<map id="merge_arrays" name="merge_arrays">
+<area shape="rect" id="Node000001" title="Объединяет два отсортированных массива в один." alt="" coords="5,5,112,35"/>
+<area shape="rect" id="Node000002" href="$d3/d91/utils_8c.html#a3a3b23666dbdc2c1d11be1e20d20d9b9" title="Сравнивает две строки по их начальным индексам в общем буфере." alt="" coords="160,5,229,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,18,144,18,144,23,112,23"/>
+<area shape="rect" id="Node000003" href="$d3/d91/utils_8c.html#a6766b4a0d3dc7900ae86258511e1faf4" title="Получает длину строки, начинающейся с заданного индекса." alt="" coords="277,5,372,35"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="230,18,262,18,262,23,230,23"/>
+</map>

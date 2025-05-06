@@ -1,0 +1,11 @@
+<map id="task&#45;3/bubble.h" name="task&#45;3/bubble.h">
+<area shape="rect" id="Node000001" title="Заголовочный файл для реализации пузырьковой сортировки строк." alt="" coords="75,5,193,35"/>
+<area shape="rect" id="Node000002" href="$dc/d5d/bubble_8c.html" title="Реализация алгоритма пузырьковой сортировки строк." alt="" coords="5,83,122,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,49,79,84,75,81,108,45"/>
+<area shape="rect" id="Node000003" href="$d1/d73/sorting_8h.html" title="Общие функции для работы с текстовыми файлами и управления сортировкой строк." alt="" coords="145,83,264,113"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,45,194,81,190,84,156,49"/>
+<area shape="rect" id="Node000004" href="$d6/db8/task-3_2main_8c.html" title="Точка входа программы сортировки строк текстового файла." alt="" coords="85,161,188,190"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="184,126,152,162,148,158,180,123"/>
+<area shape="rect" id="Node000005" href="$db/dd8/sorting_8c.html" title="Реализация общих функций для работы с текстовыми файлами и сортировки строк." alt="" coords="213,161,330,190"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="230,123,261,158,257,162,226,127"/>
+</map>

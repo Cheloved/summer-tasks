@@ -1,0 +1,7 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title="Точка входа программы." alt="" coords="5,32,57,62"/>
+<area shape="rect" id="Node000002" href="$dd/dba/task-7_2main_8c.html#a3d298d25294276134ddeb6c4a505d898" title="Копирует данные из одного файла в другой по частям." alt="" coords="105,5,210,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="56,39,89,32,90,37,57,44"/>
+<area shape="rect" id="Node000003" href="$dd/dba/task-7_2main_8c.html#a78aa867ce163cb425dc19dce79687513" title="Получает размер файла в байтах." alt="" coords="109,59,206,88"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="57,49,94,57,93,63,56,55"/>
+</map>

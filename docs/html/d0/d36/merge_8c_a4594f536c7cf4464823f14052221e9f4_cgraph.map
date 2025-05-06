@@ -1,0 +1,14 @@
+<map id="merge_sort_thread" name="merge_sort_thread">
+<area shape="rect" id="Node000001" title="Потоковая функция, реализующая сортировку слиянием." alt="" coords="5,44,146,74"/>
+<area shape="rect" id="Node000002" href="$d0/d36/merge_8c.html#affca7f2bf012c748015e975bb16dc680" title="Объединяет два отсортированных массива в один." alt="" coords="211,5,317,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,42,195,32,196,37,147,47"/>
+<area shape="rect" id="Node000005" href="$d4/dbc/task-1_2main_8c.html#a4594f536c7cf4464823f14052221e9f4" title="сортировка, выполняемая отдельными потоками" alt="" coords="194,83,334,112"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="147,71,179,77,178,83,145,76"/>
+<area shape="rect" id="Node000003" href="$d3/d91/utils_8c.html#a3a3b23666dbdc2c1d11be1e20d20d9b9" title="Сравнивает две строки по их начальным индексам в общем буфере." alt="" coords="400,5,470,35"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="318,18,385,18,385,23,318,23"/>
+<area shape="rect" id="Node000004" href="$d3/d91/utils_8c.html#a6766b4a0d3dc7900ae86258511e1faf4" title="Получает длину строки, начинающейся с заданного индекса." alt="" coords="536,5,632,35"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="470,18,521,18,521,23,470,23"/>
+<area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="233,84,229,74,233,64,245,58,264,56,284,59,295,65,292,70,282,64,264,61,246,63,237,68,234,74,238,81"/>
+<area shape="rect" id="Node000006" href="$d4/dbc/task-1_2main_8c.html#a2877f21864f73213a6ec83e1fd4b850e" title="объединяет массивы l и r в result" alt="" coords="382,83,488,112"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="334,95,366,95,366,100,334,100"/>
+</map>

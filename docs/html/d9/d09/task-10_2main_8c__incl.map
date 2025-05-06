@@ -1,0 +1,28 @@
+<map id="task&#45;10/main.c" name="task&#45;10/main.c">
+<area shape="rect" id="Node000001" title="Точка входа программы, реализующей парсер и вычислитель логических выражений." alt="" coords="173,5,284,35"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="34,238,97,268"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,38,140,56,92,82,47,118,28,139,12,162,8,178,13,195,24,212,37,226,34,230,19,215,8,197,3,179,7,160,23,135,43,114,89,78,138,51,182,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="286,238,352,268"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="264,33,302,52,345,80,385,115,402,136,416,160,419,182,409,203,390,220,368,234,365,229,387,216,405,199,414,181,411,162,398,140,381,119,342,84,300,57,262,38"/>
+<area shape="rect" id="Node000004" href="$d1/d07/token_8h.html" title="Заголовочный файл для лексического анализа строки." alt="" coords="122,161,191,190"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="217,37,199,59,183,84,171,116,163,146,158,145,166,114,178,82,195,55,213,34"/>
+<area shape="rect" id="Node000006" href="$df/dd3/dynamic_8h.html" title="Заголовочный файл для работы с динамическими двумерными массивами строк." alt="" coords="317,161,401,190"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="243,34,339,147,335,150,238,37"/>
+<area shape="rect" id="Node000007" href="$d5/d36/parser_8h.html" title="Заголовочный файл для парсинга и вычисления логических выражений." alt="" coords="193,83,264,113"/>
+<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="231,36,231,67,226,67,226,36"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="141,193,96,230,93,226,138,189"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="188,189,276,229,274,234,186,193"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="122,238,191,268"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="159,191,159,223,154,223,154,191"/>
+<area shape="poly" id="edge8_Node000006_Node000002" title=" " alt="" coords="317,189,113,240,112,235,316,184"/>
+<area shape="poly" id="edge9_Node000006_Node000003" title=" " alt="" coords="354,192,336,226,331,223,349,190"/>
+<area shape="poly" id="edge11_Node000007_Node000002" title=" " alt="" coords="193,101,151,103,105,112,60,131,40,145,24,162,18,177,21,194,30,210,42,225,38,229,25,213,16,195,13,177,19,159,37,141,57,126,103,107,151,98,192,95"/>
+<area shape="poly" id="edge12_Node000007_Node000003" title=" " alt="" coords="239,112,305,223,301,226,234,115"/>
+<area shape="poly" id="edge14_Node000007_Node000004" title=" " alt="" coords="217,115,182,151,178,148,213,111"/>
+<area shape="poly" id="edge13_Node000007_Node000005" title=" " alt="" coords="229,113,221,149,205,192,182,228,177,225,201,189,216,148,224,112"/>
+<area shape="poly" id="edge15_Node000007_Node000006" title=" " alt="" coords="254,111,323,150,320,155,252,116"/>
+<area shape="rect" id="Node000008" href="$d7/de0/stack_8h.html" title="Заголовочный файл, реализующий стек строк." alt="" coords="34,161,98,190"/>
+<area shape="poly" id="edge16_Node000007_Node000008" title=" " alt="" coords="199,116,111,156,109,151,197,111"/>
+<area shape="poly" id="edge17_Node000008_Node000002" title=" " alt="" coords="68,191,68,223,63,223,63,191"/>
+<area shape="poly" id="edge18_Node000008_Node000005" title=" " alt="" coords="85,189,130,226,126,230,81,193"/>
+</map>

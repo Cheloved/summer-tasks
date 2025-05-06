@@ -1,0 +1,76 @@
+\doxysection{task-\/3/bubble.h File Reference}
+\hypertarget{bubble_8h}{}\label{bubble_8h}\index{task-\/3/bubble.h@{task-\/3/bubble.h}}
+
+
+Заголовочный файл для реализации пузырьковой сортировки строк.  
+
+
+{\ttfamily \#include "{}utils.\+h"{}}\newline
+Include dependency graph for bubble.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{db/da7/bubble_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{d8/d6e/bubble_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{bubble_8h_aba3baf667f64d13cd436e62f3d0af30f}{bubble\+\_\+sort}} (char \texorpdfstring{$\ast$}{*}input, long \texorpdfstring{$\ast$}{*}array, long length, long \texorpdfstring{$\ast$}{*}result)
+\begin{DoxyCompactList}\small\item\em Пузырьковая сортировка массива индексов строк. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Заголовочный файл для реализации пузырьковой сортировки строк. 
+
+Содержит объявление функции {\ttfamily \doxylink{bubble_8h_aba3baf667f64d13cd436e62f3d0af30f}{bubble\+\_\+sort()}}, которая выполняет пузырьковую сортировку индексов строк текста, находящегося в общей памяти.
+
+\begin{DoxyAuthor}{Author}
+Ракитин Илья Алексеевич 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{bubble_8h_aba3baf667f64d13cd436e62f3d0af30f}\index{bubble.h@{bubble.h}!bubble\_sort@{bubble\_sort}}
+\index{bubble\_sort@{bubble\_sort}!bubble.h@{bubble.h}}
+\doxysubsubsection{\texorpdfstring{bubble\_sort()}{bubble\_sort()}}
+{\footnotesize\ttfamily \label{bubble_8h_aba3baf667f64d13cd436e62f3d0af30f} 
+int bubble\+\_\+sort (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{input}{, }\item[{long \texorpdfstring{$\ast$}{*}}]{array}{, }\item[{long}]{length}{, }\item[{long \texorpdfstring{$\ast$}{*}}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Пузырьковая сортировка массива индексов строк. 
+
+Сортирует массив индексов строк на основе содержимого текста, используя функцию \doxylink{utils_8c_a3a3b23666dbdc2c1d11be1e20d20d9b9}{linecmp()} из \doxylink{utils_8h}{utils.\+h} для сравнения строк.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Указатель на начало текста (общий буфер с текстом). \\
+\hline
+{\em array} & Входной массив индексов строк. \\
+\hline
+{\em length} & Длина входного массива индексов. \\
+\hline
+{\em result} & Выходной массив отсортированных индексов строк. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 0 при успешном завершении. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{d9/d84/bubble_8h_aba3baf667f64d13cd436e62f3d0af30f_cgraph}
+\end{center}
+\end{figure}

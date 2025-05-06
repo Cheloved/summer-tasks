@@ -1,0 +1,74 @@
+\doxysection{task-\/9/io.h File Reference}
+\hypertarget{io_8h}{}\label{io_8h}\index{task-\/9/io.h@{task-\/9/io.h}}
+
+
+Заголовочный файл для работы с вводом/выводом числовой последовательности.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for io.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{d8/da5/io_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{da/de4/io_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{io_8h_a09a3b394b8602092d58347b791158062}\label{io_8h_a09a3b394b8602092d58347b791158062} 
+\#define {\bfseries MAX\+\_\+\+LINE\+\_\+\+LEN}~16384
+\begin{DoxyCompactList}\small\item\em Максимальная длина строки, считываемой из файла. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{io_8h_aa4f4dc3ad731c98c15b4a970db6e68f5}{read\+\_\+seq}} (char \texorpdfstring{$\ast$}{*}path, int \texorpdfstring{$\ast$}{*}result, int size)
+\begin{DoxyCompactList}\small\item\em Считывает числовую последовательность из текстового файла. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Заголовочный файл для работы с вводом/выводом числовой последовательности. 
+
+Содержит объявления функций для чтения числовой последовательности из текстового файла.
+
+\begin{DoxyAuthor}{Author}
+Ракитин Илья Алексеевич 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{io_8h_aa4f4dc3ad731c98c15b4a970db6e68f5}\index{io.h@{io.h}!read\_seq@{read\_seq}}
+\index{read\_seq@{read\_seq}!io.h@{io.h}}
+\doxysubsubsection{\texorpdfstring{read\_seq()}{read\_seq()}}
+{\footnotesize\ttfamily \label{io_8h_aa4f4dc3ad731c98c15b4a970db6e68f5} 
+int read\+\_\+seq (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{path}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{result}{, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Считывает числовую последовательность из текстового файла. 
+
+Файл должен содержать одну строку с числами, разделёнными пробелами.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Путь к файлу. \\
+\hline
+{\em result} & Указатель на массив, в который будут записаны значения. \\
+\hline
+{\em size} & Количество элементов, которые нужно прочитать. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 0 при успешном завершении, -\/1 в случае ошибки открытия файла. 
+\end{DoxyReturn}

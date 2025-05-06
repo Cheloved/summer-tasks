@@ -1,0 +1,15 @@
+<map id="merge_sort_thread" name="merge_sort_thread">
+<area shape="rect" id="Node000001" title="Потоковая функция, реализующая сортировку слиянием." alt="" coords="5,48,146,78"/>
+<area shape="rect" id="Node000002" href="$d4/dbc/task-1_2main_8c.html#a2877f21864f73213a6ec83e1fd4b850e" title="объединяет массивы l и r в result" alt="" coords="382,11,488,41"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,45,144,26,193,10,238,4,284,3,367,10,366,16,283,8,238,9,194,15,146,31,105,50"/>
+<area shape="rect" id="Node000003" href="$d0/d36/merge_8c.html#affca7f2bf012c748015e975bb16dc680" title="Объединяет два отсортированных массива в один." alt="" coords="211,102,317,131"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="131,76,196,95,195,100,130,81"/>
+<area shape="rect" id="Node000006" href="$d4/dbc/task-1_2main_8c.html#a4594f536c7cf4464823f14052221e9f4" title="сортировка, выполняемая отдельными потоками" alt="" coords="194,48,334,78"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="146,61,178,61,178,66,146,66"/>
+<area shape="rect" id="Node000004" href="$d3/d91/utils_8c.html#a3a3b23666dbdc2c1d11be1e20d20d9b9" title="Сравнивает две строки по их начальным индексам в общем буфере." alt="" coords="400,102,470,131"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="318,114,385,114,385,119,318,119"/>
+<area shape="rect" id="Node000005" href="$d3/d91/utils_8c.html#a6766b4a0d3dc7900ae86258511e1faf4" title="Получает длину строки, начинающейся с заданного индекса." alt="" coords="536,102,632,131"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="470,114,521,114,521,119,470,119"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="334,45,366,38,367,43,335,51"/>
+<area shape="poly" id="edge7_Node000006_Node000006" title=" " alt="" coords="233,49,229,40,233,30,245,24,264,22,284,24,295,31,292,35,282,29,264,27,246,29,237,34,234,39,238,47"/>
+</map>

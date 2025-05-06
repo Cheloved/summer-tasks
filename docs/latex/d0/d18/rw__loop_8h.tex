@@ -1,0 +1,101 @@
+\doxysection{task-\/2/rw\+\_\+loop.h File Reference}
+\hypertarget{rw__loop_8h}{}\label{rw__loop_8h}\index{task-\/2/rw\_loop.h@{task-\/2/rw\_loop.h}}
+
+
+Объявления функций и констант для работы с циклом чтения/записи через UNIX-\/сокеты.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$sys/un.\+h$>$}\newline
+Include dependency graph for rw\+\_\+loop.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/de3/rw__loop_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/dcb/rw__loop_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{rw__loop_8h_accd1a28a51a58f5632e42b9fd57725d8}{SOCKET\+\_\+\+PATH}}~"{}/tmp/task2\+\_\+socket"{}
+\begin{DoxyCompactList}\small\item\em Путь к файлу UNIX-\/сокета. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{rw__loop_8h_aa3fbd1b7db5563bc97af47943afa34a4}{MAX\+\_\+\+MESSAGE\+\_\+\+LEN}}~1024
+\begin{DoxyCompactList}\small\item\em Максимальная длина сообщения, передаваемого через сокет. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{rw__loop_8h_a394b53a6325dcc03e7d816b9b78c7625}{read\+\_\+loop}} (int sockfd, char \texorpdfstring{$\ast$}{*}connect\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Разделяет чтение и запись в сокет на два отдельных процесса. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Объявления функций и констант для работы с циклом чтения/записи через UNIX-\/сокеты. 
+
+Этот заголовочный файл определяет базовые константы, необходимые системные включения, а также объявляет функцию \doxylink{rw__loop_8h_a394b53a6325dcc03e7d816b9b78c7625}{read\+\_\+loop()}, которая реализует логику разделения работы между процессами чтения и записи через сокет.
+
+\begin{DoxyAuthor}{Author}
+Ракитин Илья Алексеевич 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{rw__loop_8h_aa3fbd1b7db5563bc97af47943afa34a4}\index{rw\_loop.h@{rw\_loop.h}!MAX\_MESSAGE\_LEN@{MAX\_MESSAGE\_LEN}}
+\index{MAX\_MESSAGE\_LEN@{MAX\_MESSAGE\_LEN}!rw\_loop.h@{rw\_loop.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_MESSAGE\_LEN}{MAX\_MESSAGE\_LEN}}
+{\footnotesize\ttfamily \label{rw__loop_8h_aa3fbd1b7db5563bc97af47943afa34a4} 
+\#define MAX\+\_\+\+MESSAGE\+\_\+\+LEN~1024}
+
+
+
+Максимальная длина сообщения, передаваемого через сокет. 
+
+Определяет размер буфера для приема и отправки данных. \Hypertarget{rw__loop_8h_accd1a28a51a58f5632e42b9fd57725d8}\index{rw\_loop.h@{rw\_loop.h}!SOCKET\_PATH@{SOCKET\_PATH}}
+\index{SOCKET\_PATH@{SOCKET\_PATH}!rw\_loop.h@{rw\_loop.h}}
+\doxysubsubsection{\texorpdfstring{SOCKET\_PATH}{SOCKET\_PATH}}
+{\footnotesize\ttfamily \label{rw__loop_8h_accd1a28a51a58f5632e42b9fd57725d8} 
+\#define SOCKET\+\_\+\+PATH~"{}/tmp/task2\+\_\+socket"{}}
+
+
+
+Путь к файлу UNIX-\/сокета. 
+
+Используется сервером для привязки сокета и клиентом для подключения. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{rw__loop_8h_a394b53a6325dcc03e7d816b9b78c7625}\index{rw\_loop.h@{rw\_loop.h}!read\_loop@{read\_loop}}
+\index{read\_loop@{read\_loop}!rw\_loop.h@{rw\_loop.h}}
+\doxysubsubsection{\texorpdfstring{read\_loop()}{read\_loop()}}
+{\footnotesize\ttfamily \label{rw__loop_8h_a394b53a6325dcc03e7d816b9b78c7625} 
+int read\+\_\+loop (\begin{DoxyParamCaption}\item[{int}]{sockfd}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{connect\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Разделяет чтение и запись в сокет на два отдельных процесса. 
+
+Создаёт дочерний процесс\+: родительский процесс ожидает входящие данные из сокета, дочерний — считывает ввод с терминала и отправляет его через сокет. Работает до закрытия соединения одной из сторон.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sockfd} & Дескриптор сокета, через который осуществляется обмен данными. \\
+\hline
+{\em connect\+\_\+name} & Имя соединения (например, "{}client"{} или "{}server"{}) для логирования. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 0 при успешном завершении, -\/1 в случае ошибки. 
+\end{DoxyReturn}

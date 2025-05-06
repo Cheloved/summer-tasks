@@ -1,0 +1,75 @@
+\doxysection{task-\/10/token.h File Reference}
+\hypertarget{token_8h}{}\label{token_8h}\index{task-\/10/token.h@{task-\/10/token.h}}
+
+
+Заголовочный файл для лексического анализа строки.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for token.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{d0/d77/token_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{d0/d5f/token_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{token_8h_a3f6d16dfdf7920e1e5f1dad5db5347f2}\label{token_8h_a3f6d16dfdf7920e1e5f1dad5db5347f2} 
+\#define {\bfseries MAX\+\_\+\+TOKEN\+\_\+\+LEN}~32
+\begin{DoxyCompactList}\small\item\em Максимальная длина одного токена. \end{DoxyCompactList}\item 
+\Hypertarget{token_8h_a09886d6ba96e67553bf3c49ed8ade975}\label{token_8h_a09886d6ba96e67553bf3c49ed8ade975} 
+\#define {\bfseries MAX\+\_\+\+TOKENS}~256
+\begin{DoxyCompactList}\small\item\em Максимальное количество токенов в выходном массиве. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{token_8h_aa70ffa26ede49f51cdffb00ecf5c10b6}{tokenize}} (char \texorpdfstring{$\ast$}{*}input, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}output)
+\begin{DoxyCompactList}\small\item\em Разбирает входную строку на токены. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Заголовочный файл для лексического анализа строки. 
+
+Содержит объявления констант и функций, необходимых для разбора входной строки на отдельные лексемы (токены), такие как числа, операторы, скобки и другие.
+
+\begin{DoxyAuthor}{Author}
+Ракитин Илья Алексеевич 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{token_8h_aa70ffa26ede49f51cdffb00ecf5c10b6}\index{token.h@{token.h}!tokenize@{tokenize}}
+\index{tokenize@{tokenize}!token.h@{token.h}}
+\doxysubsubsection{\texorpdfstring{tokenize()}{tokenize()}}
+{\footnotesize\ttfamily \label{token_8h_aa70ffa26ede49f51cdffb00ecf5c10b6} 
+int tokenize (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{input}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{output}{}\end{DoxyParamCaption})}
+
+
+
+Разбирает входную строку на токены. 
+
+Функция разделяет строку на логические элементы\+: числа, операции, скобки.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Входная строка, содержащая выражение. \\
+\hline
+{\em output} & Выходной массив для хранения токенов. Должен быть размером {\ttfamily MAX\+\_\+\+TOKENS x MAX\+\_\+\+TOKEN\+\_\+\+LEN}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает количество найденных токенов или 0 при ошибке. 
+\end{DoxyReturn}

@@ -1,0 +1,217 @@
+\doxysection{task-\/3/sorting.h File Reference}
+\hypertarget{sorting_8h}{}\label{sorting_8h}\index{task-\/3/sorting.h@{task-\/3/sorting.h}}
+
+
+Общие функции для работы с текстовыми файлами и управления сортировкой строк.  
+
+
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}bubble.\+h"{}}\newline
+{\ttfamily \#include "{}merge.\+h"{}}\newline
+{\ttfamily \#include "{}quick.\+h"{}}\newline
+{\ttfamily \#include "{}utils.\+h"{}}\newline
+Include dependency graph for sorting.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d44/sorting_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{de/db8/sorting_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+long \mbox{\hyperlink{sorting_8h_a9d8459af4af43d26aaaa1a30ffa16964}{get\+\_\+file\+\_\+size}} (char \texorpdfstring{$\ast$}{*}path)
+\begin{DoxyCompactList}\small\item\em Получает размер файла по указанному пути. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sorting_8h_a621f4365af32fde397c6d3ec2322c3ee}{read\+\_\+file}} (char \texorpdfstring{$\ast$}{*}path, long size, char \texorpdfstring{$\ast$}{*}result)
+\begin{DoxyCompactList}\small\item\em Считывает содержимое файла в указанный буфер. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sorting_8h_aeab6c3719cceac3ba6aeeab5f0898274}{get\+\_\+lines\+\_\+count}} (char \texorpdfstring{$\ast$}{*}input, long size)
+\begin{DoxyCompactList}\small\item\em Определяет количество непустых строк в тексте. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sorting_8h_a419d0d5074f432bb1b558de33f0d570b}{get\+\_\+indexes}} (char \texorpdfstring{$\ast$}{*}input, long size, long \texorpdfstring{$\ast$}{*}result)
+\begin{DoxyCompactList}\small\item\em Заполняет массив индексов начала непустых строк. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sorting_8h_ab9617daf617e2a454a133d8f11c28427}{method\+\_\+available}} (char \texorpdfstring{$\ast$}{*}method)
+\begin{DoxyCompactList}\small\item\em Проверяет, поддерживается ли указанный метод сортировки. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sorting_8h_a21197d08419c8ec2ac62d6eb40972698}{sort\+\_\+file}} (char \texorpdfstring{$\ast$}{*}input, char \texorpdfstring{$\ast$}{*}output, char \texorpdfstring{$\ast$}{*}method)
+\begin{DoxyCompactList}\small\item\em Сортирует строки из входного файла заданным методом и сохраняет результат в выходной файл. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sorting_8h_ab0f459980b2a40b22c08e789eb37927c}{save}} (char \texorpdfstring{$\ast$}{*}path, char \texorpdfstring{$\ast$}{*}buffer)
+\begin{DoxyCompactList}\small\item\em Сохраняет содержимое буфера в файл. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Общие функции для работы с текстовыми файлами и управления сортировкой строк. 
+
+Содержит объявления функций, необходимых для чтения файла, подсчёта строк, получения индексов строк, выбора метода сортировки и сохранения результата.
+
+\begin{DoxyAuthor}{Author}
+Ракитин Илья Алексеевич 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sorting_8h_a9d8459af4af43d26aaaa1a30ffa16964}\index{sorting.h@{sorting.h}!get\_file\_size@{get\_file\_size}}
+\index{get\_file\_size@{get\_file\_size}!sorting.h@{sorting.h}}
+\doxysubsubsection{\texorpdfstring{get\_file\_size()}{get\_file\_size()}}
+{\footnotesize\ttfamily \label{sorting_8h_a9d8459af4af43d26aaaa1a30ffa16964} 
+long get\+\_\+file\+\_\+size (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Получает размер файла по указанному пути. 
+
+Открывает файл в бинарном режиме и определяет его размер.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Путь к файлу. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Размер файла в байтах или -\/1 при ошибке. 
+\end{DoxyReturn}
+\Hypertarget{sorting_8h_a419d0d5074f432bb1b558de33f0d570b}\index{sorting.h@{sorting.h}!get\_indexes@{get\_indexes}}
+\index{get\_indexes@{get\_indexes}!sorting.h@{sorting.h}}
+\doxysubsubsection{\texorpdfstring{get\_indexes()}{get\_indexes()}}
+{\footnotesize\ttfamily \label{sorting_8h_a419d0d5074f432bb1b558de33f0d570b} 
+int get\+\_\+indexes (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{input}{, }\item[{long}]{size}{, }\item[{long \texorpdfstring{$\ast$}{*}}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Заполняет массив индексов начала непустых строк. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Указатель на начало текста. \\
+\hline
+{\em size} & Размер текста в байтах. \\
+\hline
+{\em result} & Выходной массив индексов строк. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 0 при успешном завершении. 
+\end{DoxyReturn}
+\Hypertarget{sorting_8h_aeab6c3719cceac3ba6aeeab5f0898274}\index{sorting.h@{sorting.h}!get\_lines\_count@{get\_lines\_count}}
+\index{get\_lines\_count@{get\_lines\_count}!sorting.h@{sorting.h}}
+\doxysubsubsection{\texorpdfstring{get\_lines\_count()}{get\_lines\_count()}}
+{\footnotesize\ttfamily \label{sorting_8h_aeab6c3719cceac3ba6aeeab5f0898274} 
+int get\+\_\+lines\+\_\+count (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{input}{, }\item[{long}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Определяет количество непустых строк в тексте. 
+
+Непустой строкой считаются любые символы кроме пробелов до перевода строки.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Указатель на начало текста. \\
+\hline
+{\em size} & Размер текста в байтах. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Количество непустых строк. 
+\end{DoxyReturn}
+\Hypertarget{sorting_8h_ab9617daf617e2a454a133d8f11c28427}\index{sorting.h@{sorting.h}!method\_available@{method\_available}}
+\index{method\_available@{method\_available}!sorting.h@{sorting.h}}
+\doxysubsubsection{\texorpdfstring{method\_available()}{method\_available()}}
+{\footnotesize\ttfamily \label{sorting_8h_ab9617daf617e2a454a133d8f11c28427} 
+int method\+\_\+available (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{method}{}\end{DoxyParamCaption})}
+
+
+
+Проверяет, поддерживается ли указанный метод сортировки. 
+
+Доступные методы\+: "{}bubble"{}, "{}merge"{}, "{}quick"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em method} & Имя метода сортировки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 1, если метод поддерживается, иначе — 0. 
+\end{DoxyReturn}
+\Hypertarget{sorting_8h_a621f4365af32fde397c6d3ec2322c3ee}\index{sorting.h@{sorting.h}!read\_file@{read\_file}}
+\index{read\_file@{read\_file}!sorting.h@{sorting.h}}
+\doxysubsubsection{\texorpdfstring{read\_file()}{read\_file()}}
+{\footnotesize\ttfamily \label{sorting_8h_a621f4365af32fde397c6d3ec2322c3ee} 
+int read\+\_\+file (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{path}{, }\item[{long}]{size}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Считывает содержимое файла в указанный буфер. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Путь к файлу. \\
+\hline
+{\em size} & Размер данных, которые нужно считать. \\
+\hline
+{\em result} & Указатель на буфер для хранения содержимого файла. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 0 при успешном завершении, -\/1 при ошибке. 
+\end{DoxyReturn}
+\Hypertarget{sorting_8h_ab0f459980b2a40b22c08e789eb37927c}\index{sorting.h@{sorting.h}!save@{save}}
+\index{save@{save}!sorting.h@{sorting.h}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily \label{sorting_8h_ab0f459980b2a40b22c08e789eb37927c} 
+int save (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{path}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{buffer}{}\end{DoxyParamCaption})}
+
+
+
+Сохраняет содержимое буфера в файл. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Путь к файлу для записи. \\
+\hline
+{\em buffer} & Буфер с данными для записи. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 0 при успешном завершении, -\/1 при ошибке. 
+\end{DoxyReturn}
+\Hypertarget{sorting_8h_a21197d08419c8ec2ac62d6eb40972698}\index{sorting.h@{sorting.h}!sort\_file@{sort\_file}}
+\index{sort\_file@{sort\_file}!sorting.h@{sorting.h}}
+\doxysubsubsection{\texorpdfstring{sort\_file()}{sort\_file()}}
+{\footnotesize\ttfamily \label{sorting_8h_a21197d08419c8ec2ac62d6eb40972698} 
+int sort\+\_\+file (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{input}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{output}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{method}{}\end{DoxyParamCaption})}
+
+
+
+Сортирует строки из входного файла заданным методом и сохраняет результат в выходной файл. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Путь к входному файлу. \\
+\hline
+{\em output} & Путь к выходному файлу. \\
+\hline
+{\em method} & Метод сортировки ("{}bubble"{}, "{}merge"{}, "{}quick"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 0 при успешном завершении, -\/1 при ошибке. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d73/sorting_8h_a21197d08419c8ec2ac62d6eb40972698_cgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,56 @@
+\doxysection{task-\/2/rw\+\_\+loop.c File Reference}
+\hypertarget{rw__loop_8c}{}\label{rw__loop_8c}\index{task-\/2/rw\_loop.c@{task-\/2/rw\_loop.c}}
+
+
+Реализация функции \doxylink{rw__loop_8c_a394b53a6325dcc03e7d816b9b78c7625}{read\+\_\+loop()} для работы с циклом чтения/записи через UNIX-\/сокет.  
+
+
+{\ttfamily \#include "{}rw\+\_\+loop.\+h"{}}\newline
+Include dependency graph for rw\+\_\+loop.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/ddb/rw__loop_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{rw__loop_8c_a394b53a6325dcc03e7d816b9b78c7625}{read\+\_\+loop}} (int sockfd, char \texorpdfstring{$\ast$}{*}connect\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Разделяет чтение и запись в сокет на два отдельных процесса. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Реализация функции \doxylink{rw__loop_8c_a394b53a6325dcc03e7d816b9b78c7625}{read\+\_\+loop()} для работы с циклом чтения/записи через UNIX-\/сокет. 
+
+Файл содержит реализацию функции, которая создаёт два процесса\+: один читает данные из сокета, второй — отправляет введённые пользователем данные в сокет. Обмен происходит до разрыва соединения.
+
+\begin{DoxyAuthor}{Author}
+Ракитин Илья Алексеевич 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{rw__loop_8c_a394b53a6325dcc03e7d816b9b78c7625}\index{rw\_loop.c@{rw\_loop.c}!read\_loop@{read\_loop}}
+\index{read\_loop@{read\_loop}!rw\_loop.c@{rw\_loop.c}}
+\doxysubsubsection{\texorpdfstring{read\_loop()}{read\_loop()}}
+{\footnotesize\ttfamily \label{rw__loop_8c_a394b53a6325dcc03e7d816b9b78c7625} 
+int read\+\_\+loop (\begin{DoxyParamCaption}\item[{int}]{sockfd}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{connect\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Разделяет чтение и запись в сокет на два отдельных процесса. 
+
+Создаёт дочерний процесс\+: родительский процесс ожидает входящие данные из сокета, дочерний — считывает ввод с терминала и отправляет его через сокет. Работает до закрытия соединения одной из сторон.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sockfd} & Дескриптор сокета, через который осуществляется обмен данными. \\
+\hline
+{\em connect\+\_\+name} & Имя соединения (например, "{}client"{} или "{}server"{}) для логирования. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 0 при успешном завершении, -\/1 в случае ошибки. 
+\end{DoxyReturn}

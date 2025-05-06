@@ -16,4 +16,10 @@ clean:
 		$(MAKE) -C $$dir clean || true; \
 	done
 
-.PHONY: all clean
+gen_docs:
+	doxygen Doxyfile
+
+clean_docs:
+	rm -rf docs/*
+
+.PHONY: all clean gen_docs clean_docs

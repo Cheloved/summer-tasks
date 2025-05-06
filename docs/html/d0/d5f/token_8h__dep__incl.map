@@ -1,0 +1,12 @@
+<map id="task&#45;10/token.h" name="task&#45;10/token.h">
+<area shape="rect" id="Node000001" title="Заголовочный файл для лексического анализа строки." alt="" coords="100,5,219,35"/>
+<area shape="rect" id="Node000002" href="$d0/d1d/task-10_2main_8c.html" title="Точка входа программы, реализующей парсер и вычислитель логических выражений." alt="" coords="5,161,117,190"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,47,107,64,90,84,73,124,65,161,60,160,68,123,85,82,103,60,123,43"/>
+<area shape="rect" id="Node000003" href="$d5/d36/parser_8h.html" title="Заголовочный файл для парсинга и вычисления логических выражений." alt="" coords="99,83,220,113"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="162,51,162,82,157,82,157,51"/>
+<area shape="rect" id="Node000005" href="$d5/d7b/token_8c.html" title="Реализация функции лексического анализа строки." alt="" coords="245,83,362,113"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="202,40,278,80,275,85,199,45"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="131,125,81,162,78,158,127,120"/>
+<area shape="rect" id="Node000004" href="$d2/d72/parser_8c.html" title="Реализация парсера логических выражений." alt="" coords="141,161,261,190"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="177,125,196,159,191,161,172,128"/>
+</map>

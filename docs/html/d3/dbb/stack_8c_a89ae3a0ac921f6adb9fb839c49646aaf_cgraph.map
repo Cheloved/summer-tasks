@@ -1,0 +1,5 @@
+<map id="push" name="push">
+<area shape="rect" id="Node000001" title="Добавляет строку в стек." alt="" coords="5,5,57,35"/>
+<area shape="rect" id="Node000002" href="$d3/dbb/stack_8c.html#a45c83a7e6248053e4fa93bfd5f9018ab" title="Проверяет, является ли стек полным." alt="" coords="105,5,160,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,18,89,18,89,23,57,23"/>
+</map>

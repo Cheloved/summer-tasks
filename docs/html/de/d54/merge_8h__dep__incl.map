@@ -1,0 +1,11 @@
+<map id="task&#45;3/merge.h" name="task&#45;3/merge.h">
+<area shape="rect" id="Node000001" title="Заголовочный файл реализации параллельной сортировки слиянием." alt="" coords="75,5,191,35"/>
+<area shape="rect" id="Node000002" href="$d0/d36/merge_8c.html" title="Реализация параллельной сортировки слиянием с использованием потоков." alt="" coords="5,83,120,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,49,78,84,74,81,107,45"/>
+<area shape="rect" id="Node000003" href="$d1/d73/sorting_8h.html" title="Общие функции для работы с текстовыми файлами и управления сортировкой строк." alt="" coords="144,83,264,113"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="159,45,193,81,189,84,155,49"/>
+<area shape="rect" id="Node000004" href="$d6/db8/task-3_2main_8c.html" title="Точка входа программы сортировки строк текстового файла." alt="" coords="84,161,188,190"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="183,126,151,162,147,158,179,123"/>
+<area shape="rect" id="Node000005" href="$db/dd8/sorting_8c.html" title="Реализация общих функций для работы с текстовыми файлами и сортировки строк." alt="" coords="212,161,329,190"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="229,123,260,158,256,162,225,127"/>
+</map>

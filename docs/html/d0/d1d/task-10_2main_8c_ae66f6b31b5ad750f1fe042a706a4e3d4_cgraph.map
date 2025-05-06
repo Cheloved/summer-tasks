@@ -1,0 +1,33 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title="Точка входа программы." alt="" coords="5,139,57,168"/>
+<area shape="rect" id="Node000002" href="$d2/d72/parser_8c.html#a7875bde3cad4e6e351f446e5fbe0cc92" title="Вычисляет значение постфиксного выражения." alt="" coords="109,112,182,142"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,145,93,136,95,141,58,150"/>
+<area shape="rect" id="Node000004" href="$d1/d6d/dynamic_8c.html#a1d4a6829d9c378b1cf4333aeff792067" title="Выделяет память под двумерный массив строк." alt="" coords="235,59,333,88"/>
+<area shape="poly" id="edge11_Node000001_Node000004" title=" " alt="" coords="46,136,72,116,104,98,162,81,219,73,220,78,163,86,106,103,75,120,50,140"/>
+<area shape="rect" id="Node000011" href="$d2/d72/parser_8c.html#a5f04580f5b18ae9b15ac73950a185352" title="Преобразует инфиксное выражение в постфиксное (обратная польская запись)." alt="" coords="105,165,187,195"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="58,157,90,165,89,170,57,162"/>
+<area shape="rect" id="Node000012" href="$d5/d7b/token_8c.html#aa70ffa26ede49f51cdffb00ecf5c10b6" title="Разбирает входную строку на токены." alt="" coords="109,219,183,248"/>
+<area shape="poly" id="edge19_Node000001_Node000012" title=" " alt="" coords="54,167,106,205,110,207,107,212,103,209,51,171"/>
+<area shape="rect" id="Node000003" href="$d2/d72/parser_8c.html#aa104a0f3fbe449d78e9e94efe8191615" title="Получает числовое значение для переменной." alt="" coords="244,5,325,35"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="160,110,192,78,233,45,238,41,241,46,237,49,196,82,164,113"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="182,110,229,92,231,97,184,115"/>
+<area shape="rect" id="Node000005" href="$d2/d72/parser_8c.html#a2ed3e19c7ee228d940f902f81280ccba" title="Проверяет, является ли строка допустимым оператором." alt="" coords="238,219,330,248"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="174,140,189,152,213,179,237,205,241,208,237,212,233,209,209,182,185,155,171,144"/>
+<area shape="rect" id="Node000006" href="$d3/dbb/stack_8c.html#aab8c4cc9eae2129333c02e5302918b2a" title="Получает верхний элемент стека без его удаления." alt="" coords="258,165,310,195"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="184,139,245,162,243,167,182,143"/>
+<area shape="rect" id="Node000008" href="$d3/dbb/stack_8c.html#a011231fdf585a81babe97aecc31bc7df" title="Извлекает верхний элемент из стека." alt="" coords="262,272,307,302"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="176,140,189,152,206,181,213,207,220,232,237,258,250,269,247,273,233,262,215,234,208,208,201,183,185,155,173,144"/>
+<area shape="rect" id="Node000009" href="$d3/dbb/stack_8c.html#a89ae3a0ac921f6adb9fb839c49646aaf" title="Добавляет строку в стек." alt="" coords="258,112,310,142"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="183,124,243,124,243,130,183,130"/>
+<area shape="rect" id="Node000007" href="$d3/dbb/stack_8c.html#a5d65527ccfa3883a501727f6d0637381" title="Проверяет, является ли стек пустым." alt="" coords="381,272,458,302"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="312,190,335,205,396,259,392,263,332,209,309,195"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="307,284,366,284,366,290,307,290"/>
+<area shape="rect" id="Node000010" href="$d3/dbb/stack_8c.html#a45c83a7e6248053e4fa93bfd5f9018ab" title="Проверяет, является ли стек полным." alt="" coords="392,112,447,142"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="310,124,377,124,377,130,310,130"/>
+<area shape="poly" id="edge13_Node000011_Node000004" title=" " alt="" coords="171,163,185,152,209,125,233,98,237,95,241,99,237,102,213,128,189,155,174,167"/>
+<area shape="poly" id="edge15_Node000011_Node000005" title=" " alt="" coords="187,193,231,210,229,215,185,198"/>
+<area shape="poly" id="edge16_Node000011_Node000006" title=" " alt="" coords="188,178,242,178,242,183,188,183"/>
+<area shape="poly" id="edge14_Node000011_Node000007" title=" " alt="" coords="176,194,189,205,199,220,205,236,210,264,216,289,224,301,236,311,270,324,306,325,342,317,374,306,376,311,343,323,306,330,269,329,234,316,220,304,211,292,205,265,200,237,195,223,185,209,173,197"/>
+<area shape="poly" id="edge17_Node000011_Node000008" title=" " alt="" coords="174,193,189,205,213,232,237,258,249,267,246,271,233,262,209,236,185,209,171,198"/>
+<area shape="poly" id="edge18_Node000011_Node000009" title=" " alt="" coords="185,162,243,140,245,145,187,167"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="task&#45;10/parser.h" name="task&#45;10/parser.h">
+<area shape="rect" id="Node000001" title="Заголовочный файл для парсинга и вычисления логических выражений." alt="" coords="70,5,191,35"/>
+<area shape="rect" id="Node000002" href="$d0/d1d/task-10_2main_8c.html" title="Точка входа программы, реализующей парсер и вычислитель логических выражений." alt="" coords="5,83,117,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,49,76,84,72,81,105,45"/>
+<area shape="rect" id="Node000003" href="$d2/d72/parser_8c.html" title="Реализация парсера логических выражений." alt="" coords="141,83,261,113"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="156,45,190,81,186,84,152,49"/>
+</map>

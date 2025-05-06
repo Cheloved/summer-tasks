@@ -1,0 +1,77 @@
+\doxysection{task-\/3/quick.h File Reference}
+\hypertarget{quick_8h}{}\label{quick_8h}\index{task-\/3/quick.h@{task-\/3/quick.h}}
+
+
+Заголовочный файл для реализации быстрой сортировки строк.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}utils.\+h"{}}\newline
+Include dependency graph for quick.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{de/d54/quick_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{d7/d44/quick_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{quick_8h_aaba19a5bf0aad600311eb39ac355c940}{quick\+\_\+sort}} (char \texorpdfstring{$\ast$}{*}input, long \texorpdfstring{$\ast$}{*}array, long length, long \texorpdfstring{$\ast$}{*}result)
+\begin{DoxyCompactList}\small\item\em Быстрая сортировка массива индексов строк. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Заголовочный файл для реализации быстрой сортировки строк. 
+
+Содержит объявление функции {\ttfamily \doxylink{quick_8h_aaba19a5bf0aad600311eb39ac355c940}{quick\+\_\+sort()}}, которая выполняет рекурсивную быструю сортировку индексов строк текста, используя сравнение через \doxylink{utils_8c_a3a3b23666dbdc2c1d11be1e20d20d9b9}{linecmp()}.
+
+\begin{DoxyAuthor}{Author}
+Ракитин Илья Алексеевич 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{quick_8h_aaba19a5bf0aad600311eb39ac355c940}\index{quick.h@{quick.h}!quick\_sort@{quick\_sort}}
+\index{quick\_sort@{quick\_sort}!quick.h@{quick.h}}
+\doxysubsubsection{\texorpdfstring{quick\_sort()}{quick\_sort()}}
+{\footnotesize\ttfamily \label{quick_8h_aaba19a5bf0aad600311eb39ac355c940} 
+int quick\+\_\+sort (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{input}{, }\item[{long \texorpdfstring{$\ast$}{*}}]{array}{, }\item[{long}]{length}{, }\item[{long \texorpdfstring{$\ast$}{*}}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Быстрая сортировка массива индексов строк. 
+
+Рекурсивно разбивает массив на три части (меньше, равно, больше опорного), сортирует подмассивы и возвращает отсортированный массив индексов строк.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Указатель на начало текста (общий буфер с текстом). \\
+\hline
+{\em array} & Входной массив индексов строк. \\
+\hline
+{\em length} & Длина входного массива индексов. \\
+\hline
+{\em result} & Выходной массив отсортированных индексов строк. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 0 при успешном завершении. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{d6/d54/quick_8h_aaba19a5bf0aad600311eb39ac355c940_cgraph}
+\end{center}
+\end{figure}

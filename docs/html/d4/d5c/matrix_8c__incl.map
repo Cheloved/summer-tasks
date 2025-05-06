@@ -1,0 +1,11 @@
+<map id="task&#45;8/matrix.c" name="task&#45;8/matrix.c">
+<area shape="rect" id="Node000001" title="Реализация функций для работы с квадратными матрицами." alt="" coords="70,5,183,35"/>
+<area shape="rect" id="Node000002" href="$dd/df4/matrix_8h.html" title="Заголовочный файл для работы с квадратными матрицами." alt="" coords="90,83,163,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,36,129,67,124,67,124,36"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,161,69,190"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,115,67,153,63,148,108,111"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="93,161,160,190"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="129,113,129,145,124,145,124,113"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="184,161,255,190"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="146,111,192,148,189,153,142,115"/>
+</map>

@@ -1,0 +1,58 @@
+\doxysection{task-\/9/io.c File Reference}
+\hypertarget{io_8c}{}\label{io_8c}\index{task-\/9/io.c@{task-\/9/io.c}}
+
+
+Реализация функции для чтения числовой последовательности из файла.  
+
+
+{\ttfamily \#include "{}io.\+h"{}}\newline
+Include dependency graph for io.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{d3/d43/io_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{io_8c_aa4f4dc3ad731c98c15b4a970db6e68f5}{read\+\_\+seq}} (char \texorpdfstring{$\ast$}{*}path, int \texorpdfstring{$\ast$}{*}result, int size)
+\begin{DoxyCompactList}\small\item\em Считывает числовую последовательность из текстового файла. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Реализация функции для чтения числовой последовательности из файла. 
+
+Файл должен содержать одну строку с числами, разделёнными пробелами. Используется для обработки входных данных в задачах, где требуется обработать последовательность целых чисел.
+
+\begin{DoxyAuthor}{Author}
+Ракитин Илья Алексеевич 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{io_8c_aa4f4dc3ad731c98c15b4a970db6e68f5}\index{io.c@{io.c}!read\_seq@{read\_seq}}
+\index{read\_seq@{read\_seq}!io.c@{io.c}}
+\doxysubsubsection{\texorpdfstring{read\_seq()}{read\_seq()}}
+{\footnotesize\ttfamily \label{io_8c_aa4f4dc3ad731c98c15b4a970db6e68f5} 
+int read\+\_\+seq (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{path}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{result}{, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Считывает числовую последовательность из текстового файла. 
+
+Файл должен содержать одну строку с числами, разделёнными пробелами.
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Путь к файлу. \\
+\hline
+{\em result} & Указатель на массив, в который будут записаны значения. \\
+\hline
+{\em size} & Количество элементов, которые нужно прочитать. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 0 при успешном завершении, -\/1 в случае ошибки открытия файла. 
+\end{DoxyReturn}

@@ -1,0 +1,5 @@
+<map id="pop" name="pop">
+<area shape="rect" id="Node000001" title="Извлекает верхний элемент из стека." alt="" coords="5,5,51,35"/>
+<area shape="rect" id="Node000002" href="$d3/dbb/stack_8c.html#a5d65527ccfa3883a501727f6d0637381" title="Проверяет, является ли стек пустым." alt="" coords="99,5,175,35"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,18,83,18,83,23,51,23"/>
+</map>

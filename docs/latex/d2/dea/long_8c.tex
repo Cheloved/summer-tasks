@@ -1,0 +1,118 @@
+\doxysection{task-\/4/long.c File Reference}
+\hypertarget{long_8c}{}\label{long_8c}\index{task-\/4/long.c@{task-\/4/long.c}}
+
+
+Пример обработки длинных опций командной строки в C.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$getopt.\+h$>$}\newline
+Include dependency graph for long.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{d5/d54/long_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{long_8c_a3857954f814d85fb28fd9fff3a735028}{contain}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}array, int length, char \texorpdfstring{$\ast$}{*}element)
+\begin{DoxyCompactList}\small\item\em Проверяет, содержится ли элемент в массиве строк. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{long_8c_ad6ae5d88c5464bd7027fa0bc0b26980a}{handle\+\_\+wrong\+\_\+long}} (const char \texorpdfstring{$\ast$}{*}name, char \texorpdfstring{$\ast$}{*}val, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}correct, int len)
+\begin{DoxyCompactList}\small\item\em Обрабатывает ситуацию, когда значение опции некорректно. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{long_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\begin{DoxyCompactList}\small\item\em Точка входа программы. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Пример обработки длинных опций командной строки в C. 
+
+Программа демонстрирует использование функции {\ttfamily getopt\+\_\+long()} для разбора как коротких, так и длинных опций. Также реализована проверка допустимых значений для одной из опций ({\ttfamily -\/-\/elbrus}).
+
+\begin{DoxyAuthor}{Author}
+Ракитин Илья Алексеевич 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{long_8c_a3857954f814d85fb28fd9fff3a735028}\index{long.c@{long.c}!contain@{contain}}
+\index{contain@{contain}!long.c@{long.c}}
+\doxysubsubsection{\texorpdfstring{contain()}{contain()}}
+{\footnotesize\ttfamily \label{long_8c_a3857954f814d85fb28fd9fff3a735028} 
+int contain (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{array}{, }\item[{int}]{length}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})}
+
+
+
+Проверяет, содержится ли элемент в массиве строк. 
+
+Используется для проверки допустимых значений опции {\ttfamily -\/-\/elbrus}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & Указатель на массив строк. \\
+\hline
+{\em length} & Длина массива. \\
+\hline
+{\em element} & Строка для поиска. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 1, если элемент найден, иначе — 0. 
+\end{DoxyReturn}
+\Hypertarget{long_8c_ad6ae5d88c5464bd7027fa0bc0b26980a}\index{long.c@{long.c}!handle\_wrong\_long@{handle\_wrong\_long}}
+\index{handle\_wrong\_long@{handle\_wrong\_long}!long.c@{long.c}}
+\doxysubsubsection{\texorpdfstring{handle\_wrong\_long()}{handle\_wrong\_long()}}
+{\footnotesize\ttfamily \label{long_8c_ad6ae5d88c5464bd7027fa0bc0b26980a} 
+void handle\+\_\+wrong\+\_\+long (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{val}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{correct}{, }\item[{int}]{len}{}\end{DoxyParamCaption})}
+
+
+
+Обрабатывает ситуацию, когда значение опции некорректно. 
+
+Выводит сообщение об ошибке и доступные значения, затем завершает программу.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Имя опции. \\
+\hline
+{\em val} & Значение опции. \\
+\hline
+{\em correct} & Массив допустимых значений. \\
+\hline
+{\em len} & Длина массива допустимых значений. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{long_8c_a3c04138a5bfe5d72780bb7e82a18e627}\index{long.c@{long.c}!main@{main}}
+\index{main@{main}!long.c@{long.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{long_8c_a3c04138a5bfe5d72780bb7e82a18e627} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv}{}\end{DoxyParamCaption})}
+
+
+
+Точка входа программы. 
+
+Обрабатывает опции командной строки, включая длинную опцию {\ttfamily -\/-\/elbrus} с ограниченным набором допустимых значений.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Количество аргументов командной строки. \\
+\hline
+{\em argv} & Массив аргументов командной строки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Всегда возвращает 0. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{d2/dea/long_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}

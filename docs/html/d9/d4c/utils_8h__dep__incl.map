@@ -1,0 +1,27 @@
+<map id="task&#45;3/utils.h" name="task&#45;3/utils.h">
+<area shape="rect" id="Node000001" title="Вспомогательные функции для работы со строками в общем буфере." alt="" coords="218,5,318,35"/>
+<area shape="rect" id="Node000002" href="$d9/d84/bubble_8h.html" title="Заголовочный файл для реализации пузырьковой сортировки строк." alt="" coords="64,83,183,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="228,45,152,85,149,80,226,40"/>
+<area shape="rect" id="Node000004" href="$d1/d73/sorting_8h.html" title="Общие функции для работы с текстовыми файлами и управления сортировкой строк." alt="" coords="183,161,302,190"/>
+<area shape="poly" id="edge13_Node000001_Node000004" title=" " alt="" coords="258,50,248,84,244,125,244,160,239,160,238,125,242,82,253,49"/>
+<area shape="rect" id="Node000005" href="$d6/db8/task-3_2main_8c.html" title="Точка входа программы сортировки строк текстового файла." alt="" coords="5,238,109,268"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="203,27,165,33,125,43,88,60,55,85,36,109,28,132,27,158,33,190,41,215,51,237,46,239,36,217,28,191,22,158,22,131,31,106,51,81,85,56,124,38,164,27,202,21"/>
+<area shape="rect" id="Node000007" href="$d0/d7d/merge_8h.html" title="Заголовочный файл реализации параллельной сортировки слиянием." alt="" coords="258,83,374,113"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="287,47,309,81,304,84,283,50"/>
+<area shape="rect" id="Node000009" href="$d6/d54/quick_8h.html" title="Заголовочный файл для реализации быстрой сортировки строк." alt="" coords="398,83,505,113"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="317,39,418,80,416,85,315,44"/>
+<area shape="rect" id="Node000011" href="$d3/d91/utils_8c.html" title="Реализация вспомогательных функций для работы со строками в общем буфере." alt="" coords="529,83,628,113"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="334,35,529,82,528,87,332,40"/>
+<area shape="rect" id="Node000003" href="$dc/d5d/bubble_8c.html" title="Реализация алгоритма пузырьковой сортировки строк." alt="" coords="43,161,159,190"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="118,129,108,161,103,159,112,127"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="160,119,222,158,219,162,157,124"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="194,199,93,240,91,235,192,194"/>
+<area shape="rect" id="Node000006" href="$db/dd8/sorting_8c.html" title="Реализация общих функций для работы с текстовыми файлами и сортировки строк." alt="" coords="184,238,301,268"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="245,206,245,238,240,238,240,206"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="293,126,258,162,254,158,289,122"/>
+<area shape="rect" id="Node000008" href="$d0/d36/merge_8c.html" title="Реализация параллельной сортировки слиянием с использованием потоков." alt="" coords="326,161,441,190"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="340,123,373,158,369,162,337,126"/>
+<area shape="poly" id="edge12_Node000009_Node000004" title=" " alt="" coords="399,121,282,163,281,158,397,116"/>
+<area shape="rect" id="Node000010" href="$d3/dd3/quick_8c.html" title="Реализация алгоритма быстрой сортировки строк." alt="" coords="464,161,570,190"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="476,123,507,158,503,162,472,126"/>
+</map>

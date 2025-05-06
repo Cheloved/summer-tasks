@@ -1,0 +1,137 @@
+\doxysection{task-\/3/utils.h File Reference}
+\hypertarget{utils_8h}{}\label{utils_8h}\index{task-\/3/utils.h@{task-\/3/utils.h}}
+
+
+Вспомогательные функции для работы со строками в общем буфере.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for utils.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{db/d29/utils_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d9/d4c/utils_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{utils_8h_a6766b4a0d3dc7900ae86258511e1faf4}{get\+\_\+line\+\_\+len}} (char \texorpdfstring{$\ast$}{*}input, long idx)
+\begin{DoxyCompactList}\small\item\em Получает длину строки, начинающейся с заданного индекса. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{utils_8h_a3a3b23666dbdc2c1d11be1e20d20d9b9}{linecmp}} (char \texorpdfstring{$\ast$}{*}input, long a, long b)
+\begin{DoxyCompactList}\small\item\em Сравнивает две строки по их начальным индексам в общем буфере. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{utils_8h_afc9444df5dd4cbd0cc35821e4f2b2c85}{lines\+\_\+concat}} (char \texorpdfstring{$\ast$}{*}input, int lines, long \texorpdfstring{$\ast$}{*}idxs, char \texorpdfstring{$\ast$}{*}buffer)
+\begin{DoxyCompactList}\small\item\em Соединяет строки, указанные через массив индексов, в один буфер. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Вспомогательные функции для работы со строками в общем буфере. 
+
+Содержит объявления функций, используемых алгоритмами сортировки для\+:
+\begin{DoxyItemize}
+\item получения длины строки по индексу,
+\item сравнения двух строк по их позиции в буфере,
+\item конкатенации строк по массиву индексов.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Ракитин Илья Алексеевич 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{utils_8h_a6766b4a0d3dc7900ae86258511e1faf4}\index{utils.h@{utils.h}!get\_line\_len@{get\_line\_len}}
+\index{get\_line\_len@{get\_line\_len}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{get\_line\_len()}{get\_line\_len()}}
+{\footnotesize\ttfamily \label{utils_8h_a6766b4a0d3dc7900ae86258511e1faf4} 
+int get\+\_\+line\+\_\+len (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{input}{, }\item[{long}]{idx}{}\end{DoxyParamCaption})}
+
+
+
+Получает длину строки, начинающейся с заданного индекса. 
+
+Строка считается до символа \textquotesingle{}~\newline
+\textquotesingle{} или \textquotesingle{}\textbackslash{}0\textquotesingle{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Указатель на начало текстового буфера. \\
+\hline
+{\em idx} & Индекс начала строки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Длина строки. 
+\end{DoxyReturn}
+\Hypertarget{utils_8h_a3a3b23666dbdc2c1d11be1e20d20d9b9}\index{utils.h@{utils.h}!linecmp@{linecmp}}
+\index{linecmp@{linecmp}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{linecmp()}{linecmp()}}
+{\footnotesize\ttfamily \label{utils_8h_a3a3b23666dbdc2c1d11be1e20d20d9b9} 
+int linecmp (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{input}{, }\item[{long}]{a}{, }\item[{long}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Сравнивает две строки по их начальным индексам в общем буфере. 
+
+Сравнение производится до \textquotesingle{}~\newline
+\textquotesingle{} или \textquotesingle{}\textbackslash{}0\textquotesingle{} в каждой из строк.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Указатель на начало текстового буфера. \\
+\hline
+{\em a} & Индекс начала первой строки. \\
+\hline
+{\em b} & Индекс начала второй строки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Отрицательное число, если первая строка меньше; положительное — если больше; ноль — если строки равны. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{d5/d60/utils_8h_a3a3b23666dbdc2c1d11be1e20d20d9b9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{utils_8h_afc9444df5dd4cbd0cc35821e4f2b2c85}\index{utils.h@{utils.h}!lines\_concat@{lines\_concat}}
+\index{lines\_concat@{lines\_concat}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{lines\_concat()}{lines\_concat()}}
+{\footnotesize\ttfamily \label{utils_8h_afc9444df5dd4cbd0cc35821e4f2b2c85} 
+int lines\+\_\+concat (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{input}{, }\item[{int}]{lines}{, }\item[{long \texorpdfstring{$\ast$}{*}}]{idxs}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{buffer}{}\end{DoxyParamCaption})}
+
+
+
+Соединяет строки, указанные через массив индексов, в один буфер. 
+
+Каждая строка копируется от своего индекса до \textquotesingle{}~\newline
+\textquotesingle{} или \textquotesingle{}\textbackslash{}0\textquotesingle{}, затем добавляется \textquotesingle{}~\newline
+\textquotesingle{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Указатель на начало текстового буфера. \\
+\hline
+{\em lines} & Количество строк. \\
+\hline
+{\em idxs} & Массив индексов начала строк. \\
+\hline
+{\em buffer} & Буфер для результата. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 0 при успешном завершении. 
+\end{DoxyReturn}

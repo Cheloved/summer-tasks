@@ -1,0 +1,134 @@
+\doxysection{task-\/1/main.c File Reference}
+\hypertarget{task-1_2main_8c}{}\label{task-1_2main_8c}\index{task-\/1/main.c@{task-\/1/main.c}}
+
+
+Реализация многопоточной сортировки слиянием (Parallel Merge Sort)  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d5b/task-1_2main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structs__data}{s\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em структура для передачи данных в качестве аргумента в другой поток \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{task-1_2main_8c_ad72dbcf6d0153db1b8d8a58001feed83}\label{task-1_2main_8c_ad72dbcf6d0153db1b8d8a58001feed83} 
+\#define {\bfseries DEBUG}~0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{task-1_2main_8c_a2877f21864f73213a6ec83e1fd4b850e}{merge\+\_\+arrays}} (int32\+\_\+t \texorpdfstring{$\ast$}{*}result, int32\+\_\+t \texorpdfstring{$\ast$}{*}l, int lsize, int32\+\_\+t \texorpdfstring{$\ast$}{*}r, int rsize)
+\begin{DoxyCompactList}\small\item\em объединяет массивы l и r в result \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{task-1_2main_8c_a4594f536c7cf4464823f14052221e9f4}{merge\+\_\+sort\+\_\+thread}} (void \texorpdfstring{$\ast$}{*}arg)
+\begin{DoxyCompactList}\small\item\em сортировка, выполняемая отдельными потоками \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{task-1_2main_8c_a92ec05ec64a9ea52c747e4f7104499b2}{merge\+\_\+sort}} (int32\+\_\+t \texorpdfstring{$\ast$}{*}array, uint32\+\_\+t length, int32\+\_\+t \texorpdfstring{$\ast$}{*}result)
+\begin{DoxyCompactList}\small\item\em сортировка массива параллельным Merge Sort \end{DoxyCompactList}\item 
+\Hypertarget{task-1_2main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{task-1_2main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Реализация многопоточной сортировки слиянием (Parallel Merge Sort) 
+
+В данном файле реализована многопоточная версия алгоритма сортировки слиянием, позволяющая использовать несколько потоков для ускорения процесса сортировки. Алгоритм сохраняет временную сложность O(n log n) и использует библиотеку pthreads для распараллеливания задач на этапах разделения массива.
+
+\begin{DoxyAuthor}{Author}
+Ракитин Илья Алексеевич 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+29.\+04.\+2025
+\end{DoxyDate}
+Реализация использует стандартную библиотеку \texorpdfstring{$<$}{<}pthread.\+h\texorpdfstring{$>$}{>} для создания параллельных потоков. Merge-\/операция остаётся последовательной из-\/за необходимости сохранить стабильность сортировки. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{task-1_2main_8c_a2877f21864f73213a6ec83e1fd4b850e}\index{main.c@{main.c}!merge\_arrays@{merge\_arrays}}
+\index{merge\_arrays@{merge\_arrays}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{merge\_arrays()}{merge\_arrays()}}
+{\footnotesize\ttfamily \label{task-1_2main_8c_a2877f21864f73213a6ec83e1fd4b850e} 
+void merge\+\_\+arrays (\begin{DoxyParamCaption}\item[{int32\+\_\+t \texorpdfstring{$\ast$}{*}}]{result}{, }\item[{int32\+\_\+t \texorpdfstring{$\ast$}{*}}]{l}{, }\item[{int}]{lsize}{, }\item[{int32\+\_\+t \texorpdfstring{$\ast$}{*}}]{r}{, }\item[{int}]{rsize}{}\end{DoxyParamCaption})}
+
+
+
+объединяет массивы l и r в result 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & Динамический массив чисел, куда будет сохранен результат \\
+\hline
+{\em l} & Динамический массив результата левого дочернего потока \\
+\hline
+{\em lsize} & Кол-\/во элементов в массиве l \\
+\hline
+{\em r} & Аналогично l для правой части \\
+\hline
+{\em rsize} & Аналогично lsize для правой части \\
+\hline
+\end{DoxyParams}
+\Hypertarget{task-1_2main_8c_a92ec05ec64a9ea52c747e4f7104499b2}\index{main.c@{main.c}!merge\_sort@{merge\_sort}}
+\index{merge\_sort@{merge\_sort}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{merge\_sort()}{merge\_sort()}}
+{\footnotesize\ttfamily \label{task-1_2main_8c_a92ec05ec64a9ea52c747e4f7104499b2} 
+int merge\+\_\+sort (\begin{DoxyParamCaption}\item[{int32\+\_\+t \texorpdfstring{$\ast$}{*}}]{array}{, }\item[{uint32\+\_\+t}]{length}{, }\item[{int32\+\_\+t \texorpdfstring{$\ast$}{*}}]{result}{}\end{DoxyParamCaption})}
+
+
+
+сортировка массива параллельным Merge Sort 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & массив, который нужно отсортировать \\
+\hline
+{\em length} & длина массива array \\
+\hline
+{\em result} & массив, в который будет сохранен результат \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dbc/task-1_2main_8c_a92ec05ec64a9ea52c747e4f7104499b2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{task-1_2main_8c_a4594f536c7cf4464823f14052221e9f4}\index{main.c@{main.c}!merge\_sort\_thread@{merge\_sort\_thread}}
+\index{merge\_sort\_thread@{merge\_sort\_thread}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{merge\_sort\_thread()}{merge\_sort\_thread()}}
+{\footnotesize\ttfamily \label{task-1_2main_8c_a4594f536c7cf4464823f14052221e9f4} 
+void \texorpdfstring{$\ast$}{*} merge\+\_\+sort\+\_\+thread (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg}{}\end{DoxyParamCaption})}
+
+
+
+сортировка, выполняемая отдельными потоками 
+
+Потоковая функция, реализующая сортировку слиянием.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & структура входных данных, содержит указатель на \doxylink{structs__data}{s\+\_\+data} \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{d4/dbc/task-1_2main_8c_a4594f536c7cf4464823f14052221e9f4_cgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,84 @@
+\doxysection{task-\/10/dynamic.c File Reference}
+\hypertarget{dynamic_8c}{}\label{dynamic_8c}\index{task-\/10/dynamic.c@{task-\/10/dynamic.c}}
+
+
+Реализация функций для работы с динамическими двумерными массивами строк.  
+
+
+{\ttfamily \#include "{}dynamic.\+h"{}}\newline
+Include dependency graph for dynamic.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{d3/ddd/dynamic_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{dynamic_8c_a1d4a6829d9c378b1cf4333aeff792067}{init\+\_\+char\+\_\+arr}} (int sizex, int sizey)
+\begin{DoxyCompactList}\small\item\em Выделяет память под двумерный массив строк. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{dynamic_8c_ac5cd7d04a92a93016c22e33c3d149a1a}{free\+\_\+char\+\_\+arr}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}ar, int sizex)
+\begin{DoxyCompactList}\small\item\em Освобождает память, выделенную под двумерный массив строк. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Реализация функций для работы с динамическими двумерными массивами строк. 
+
+Файл содержит реализацию базовых операций над двумерным массивом типа {\ttfamily char\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}\+:
+\begin{DoxyItemize}
+\item выделение памяти под массив строк,
+\item освобождение памяти.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Ракитин Илья Алексеевич 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{dynamic_8c_ac5cd7d04a92a93016c22e33c3d149a1a}\index{dynamic.c@{dynamic.c}!free\_char\_arr@{free\_char\_arr}}
+\index{free\_char\_arr@{free\_char\_arr}!dynamic.c@{dynamic.c}}
+\doxysubsubsection{\texorpdfstring{free\_char\_arr()}{free\_char\_arr()}}
+{\footnotesize\ttfamily \label{dynamic_8c_ac5cd7d04a92a93016c22e33c3d149a1a} 
+int free\+\_\+char\+\_\+arr (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{ar}{, }\item[{int}]{sizex}{}\end{DoxyParamCaption})}
+
+
+
+Освобождает память, выделенную под двумерный массив строк. 
+
+Последовательно освобождает каждую строку, а затем и сам массив указателей.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & Указатель на массив, который нужно освободить. \\
+\hline
+{\em sizex} & Количество строк в массиве. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 0 при успешном завершении. 
+\end{DoxyReturn}
+\Hypertarget{dynamic_8c_a1d4a6829d9c378b1cf4333aeff792067}\index{dynamic.c@{dynamic.c}!init\_char\_arr@{init\_char\_arr}}
+\index{init\_char\_arr@{init\_char\_arr}!dynamic.c@{dynamic.c}}
+\doxysubsubsection{\texorpdfstring{init\_char\_arr()}{init\_char\_arr()}}
+{\footnotesize\ttfamily \label{dynamic_8c_a1d4a6829d9c378b1cf4333aeff792067} 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} init\+\_\+char\+\_\+arr (\begin{DoxyParamCaption}\item[{int}]{sizex}{, }\item[{int}]{sizey}{}\end{DoxyParamCaption})}
+
+
+
+Выделяет память под двумерный массив строк. 
+
+Создаёт массив указателей на строки ({\ttfamily char\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}) размером {\ttfamily sizex}, каждая из которых имеет длину {\ttfamily sizey}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sizex} & Количество строк (размер по X). \\
+\hline
+{\em sizey} & Длина каждой строки (размер по Y). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Указатель на выделенный двумерный массив, или NULL в случае ошибки. 
+\end{DoxyReturn}

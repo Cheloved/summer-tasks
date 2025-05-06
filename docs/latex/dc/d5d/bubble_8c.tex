@@ -1,0 +1,68 @@
+\doxysection{task-\/3/bubble.c File Reference}
+\hypertarget{bubble_8c}{}\label{bubble_8c}\index{task-\/3/bubble.c@{task-\/3/bubble.c}}
+
+
+Реализация алгоритма пузырьковой сортировки строк.  
+
+
+{\ttfamily \#include "{}bubble.\+h"{}}\newline
+Include dependency graph for bubble.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{d0/d4f/bubble_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{bubble_8c_aba3baf667f64d13cd436e62f3d0af30f}{bubble\+\_\+sort}} (char \texorpdfstring{$\ast$}{*}input, long \texorpdfstring{$\ast$}{*}array, long length, long \texorpdfstring{$\ast$}{*}result)
+\begin{DoxyCompactList}\small\item\em Пузырьковая сортировка массива индексов строк. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Реализация алгоритма пузырьковой сортировки строк. 
+
+Файл содержит реализацию функции {\ttfamily \doxylink{bubble_8c_aba3baf667f64d13cd436e62f3d0af30f}{bubble\+\_\+sort()}}, которая реализует пузырьковый метод сортировки строк по их индексам. Используется для сортировки строк текстового файла без изменения оригинального порядка в памяти.
+
+\begin{DoxyAuthor}{Author}
+Ракитин Илья Алексеевич 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{bubble_8c_aba3baf667f64d13cd436e62f3d0af30f}\index{bubble.c@{bubble.c}!bubble\_sort@{bubble\_sort}}
+\index{bubble\_sort@{bubble\_sort}!bubble.c@{bubble.c}}
+\doxysubsubsection{\texorpdfstring{bubble\_sort()}{bubble\_sort()}}
+{\footnotesize\ttfamily \label{bubble_8c_aba3baf667f64d13cd436e62f3d0af30f} 
+int bubble\+\_\+sort (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{input}{, }\item[{long \texorpdfstring{$\ast$}{*}}]{array}{, }\item[{long}]{length}{, }\item[{long \texorpdfstring{$\ast$}{*}}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Пузырьковая сортировка массива индексов строк. 
+
+Сортирует массив индексов строк на основе содержимого текста, используя функцию \doxylink{utils_8c_a3a3b23666dbdc2c1d11be1e20d20d9b9}{linecmp()} из \doxylink{utils_8h}{utils.\+h} для сравнения строк.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Указатель на начало текста (общий буфер с текстом). \\
+\hline
+{\em array} & Входной массив индексов строк. \\
+\hline
+{\em length} & Длина входного массива индексов. \\
+\hline
+{\em result} & Выходной массив отсортированных индексов строк. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 0 при успешном завершении. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{dc/d5d/bubble_8c_aba3baf667f64d13cd436e62f3d0af30f_cgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,168 @@
+\doxysection{task-\/10/stack.c File Reference}
+\hypertarget{stack_8c}{}\label{stack_8c}\index{task-\/10/stack.c@{task-\/10/stack.c}}
+
+
+Реализация стека строк.  
+
+
+{\ttfamily \#include "{}stack.\+h"{}}\newline
+Include dependency graph for stack.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{d3/dda/stack_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{stack_8c_a5d65527ccfa3883a501727f6d0637381}{is\+\_\+empty}} (\mbox{\hyperlink{structs__stack}{s\+\_\+stack}} stack)
+\begin{DoxyCompactList}\small\item\em Проверяет, является ли стек пустым. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{stack_8c_a45c83a7e6248053e4fa93bfd5f9018ab}{is\+\_\+full}} (\mbox{\hyperlink{structs__stack}{s\+\_\+stack}} stack)
+\begin{DoxyCompactList}\small\item\em Проверяет, является ли стек полным. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{stack_8c_a89ae3a0ac921f6adb9fb839c49646aaf}{push}} (\mbox{\hyperlink{structs__stack}{s\+\_\+stack}} \texorpdfstring{$\ast$}{*}stack, char \texorpdfstring{$\ast$}{*}value)
+\begin{DoxyCompactList}\small\item\em Добавляет строку в стек. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{stack_8c_a011231fdf585a81babe97aecc31bc7df}{pop}} (\mbox{\hyperlink{structs__stack}{s\+\_\+stack}} \texorpdfstring{$\ast$}{*}stack, char \texorpdfstring{$\ast$}{*}result)
+\begin{DoxyCompactList}\small\item\em Извлекает верхний элемент из стека. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{stack_8c_aab8c4cc9eae2129333c02e5302918b2a}{peek}} (\mbox{\hyperlink{structs__stack}{s\+\_\+stack}} stack, char \texorpdfstring{$\ast$}{*}result)
+\begin{DoxyCompactList}\small\item\em Получает верхний элемент стека без его удаления. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Реализация стека строк. 
+
+Файл содержит реализацию базовых операций над стеком строк\+:
+\begin{DoxyItemize}
+\item проверка на пустоту и заполненность,
+\item добавление элемента (push),
+\item извлечение элемента (pop),
+\item просмотр верхнего элемента (peek).
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Ракитин Илья Алексеевич 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{stack_8c_a5d65527ccfa3883a501727f6d0637381}\index{stack.c@{stack.c}!is\_empty@{is\_empty}}
+\index{is\_empty@{is\_empty}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{is\_empty()}{is\_empty()}}
+{\footnotesize\ttfamily \label{stack_8c_a5d65527ccfa3883a501727f6d0637381} 
+int is\+\_\+empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__stack}{s\+\_\+stack}}}]{stack}{}\end{DoxyParamCaption})}
+
+
+
+Проверяет, является ли стек пустым. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stack} & Стек для проверки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 1, если стек пустой, иначе — 0. 
+\end{DoxyReturn}
+\Hypertarget{stack_8c_a45c83a7e6248053e4fa93bfd5f9018ab}\index{stack.c@{stack.c}!is\_full@{is\_full}}
+\index{is\_full@{is\_full}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{is\_full()}{is\_full()}}
+{\footnotesize\ttfamily \label{stack_8c_a45c83a7e6248053e4fa93bfd5f9018ab} 
+int is\+\_\+full (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__stack}{s\+\_\+stack}}}]{stack}{}\end{DoxyParamCaption})}
+
+
+
+Проверяет, является ли стек полным. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stack} & Стек для проверки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 1, если стек заполнен, иначе — 0. 
+\end{DoxyReturn}
+\Hypertarget{stack_8c_aab8c4cc9eae2129333c02e5302918b2a}\index{stack.c@{stack.c}!peek@{peek}}
+\index{peek@{peek}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{peek()}{peek()}}
+{\footnotesize\ttfamily \label{stack_8c_aab8c4cc9eae2129333c02e5302918b2a} 
+int peek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__stack}{s\+\_\+stack}}}]{stack}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Получает верхний элемент стека без его удаления. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stack} & Стек. \\
+\hline
+{\em result} & Буфер, куда будет записано значение. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 0 при успешном выполнении, -\/1, если стек пустой. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{d3/dbb/stack_8c_aab8c4cc9eae2129333c02e5302918b2a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{stack_8c_a011231fdf585a81babe97aecc31bc7df}\index{stack.c@{stack.c}!pop@{pop}}
+\index{pop@{pop}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily \label{stack_8c_a011231fdf585a81babe97aecc31bc7df} 
+int pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__stack}{s\+\_\+stack}} \texorpdfstring{$\ast$}{*}}]{stack}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Извлекает верхний элемент из стека. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stack} & Указатель на стек. \\
+\hline
+{\em result} & Буфер, куда будет записано значение. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 0 при успешном выполнении, -\/1, если стек пустой. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{d3/dbb/stack_8c_a011231fdf585a81babe97aecc31bc7df_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{stack_8c_a89ae3a0ac921f6adb9fb839c49646aaf}\index{stack.c@{stack.c}!push@{push}}
+\index{push@{push}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily \label{stack_8c_a89ae3a0ac921f6adb9fb839c49646aaf} 
+int push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structs__stack}{s\+\_\+stack}} \texorpdfstring{$\ast$}{*}}]{stack}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Добавляет строку в стек. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stack} & Указатель на стек. \\
+\hline
+{\em value} & Строка, которую нужно добавить. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 0 при успешном выполнении, -\/1 при переполнении стека. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{d3/dbb/stack_8c_a89ae3a0ac921f6adb9fb839c49646aaf_cgraph}
+\end{center}
+\end{figure}

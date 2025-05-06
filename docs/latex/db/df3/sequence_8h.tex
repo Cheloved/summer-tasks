@@ -1,0 +1,74 @@
+\doxysection{task-\/9/sequence.h File Reference}
+\hypertarget{sequence_8h}{}\label{sequence_8h}\index{task-\/9/sequence.h@{task-\/9/sequence.h}}
+
+
+Заголовочный файл для поиска максимальной возрастающей подпоследовательности.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for sequence.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{d6/d7e/sequence_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{dc/d79/sequence_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{sequence_8h_ac5e418fd734d95df5f2e1dc922c4b809}{find\+\_\+max\+\_\+seq}} (int \texorpdfstring{$\ast$}{*}seq, int size, int \texorpdfstring{$\ast$}{*}result, int \texorpdfstring{$\ast$}{*}result\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Находит самую длинную возрастающую подпоследовательность с наибольшей суммой. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Заголовочный файл для поиска максимальной возрастающей подпоследовательности. 
+
+Содержит объявление функции, которая находит в последовательности самую длинную возрастающую подпоследовательность с наибольшей суммой.
+
+\begin{DoxyAuthor}{Author}
+Ракитин Илья Алексеевич 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sequence_8h_ac5e418fd734d95df5f2e1dc922c4b809}\index{sequence.h@{sequence.h}!find\_max\_seq@{find\_max\_seq}}
+\index{find\_max\_seq@{find\_max\_seq}!sequence.h@{sequence.h}}
+\doxysubsubsection{\texorpdfstring{find\_max\_seq()}{find\_max\_seq()}}
+{\footnotesize\ttfamily \label{sequence_8h_ac5e418fd734d95df5f2e1dc922c4b809} 
+int find\+\_\+max\+\_\+seq (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{seq}{, }\item[{int}]{size}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{result}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{result\+\_\+size}{}\end{DoxyParamCaption})}
+
+
+
+Находит самую длинную возрастающую подпоследовательность с наибольшей суммой. 
+
+Функция анализирует входную последовательность целых чисел и находит подпоследовательность, которая\+:
+\begin{DoxyItemize}
+\item строго возрастает,
+\item имеет наибольшую сумму (если есть несколько таких — выбирается самая длинная).
+\end{DoxyItemize}
+
+Результат записывается в выходной массив {\ttfamily result}, а длина результата — в {\ttfamily result\+\_\+size}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & Входная последовательность целых чисел. \\
+\hline
+{\em size} & Длина входной последовательности. \\
+\hline
+{\em result} & Выходной массив, в который будет записан результат. \\
+\hline
+{\em result\+\_\+size} & Указатель на переменную, в которую будет записана длина результата. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Возвращает 0 при успешном завершении. 
+\end{DoxyReturn}

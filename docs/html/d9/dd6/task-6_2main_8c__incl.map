@@ -1,0 +1,9 @@
+<map id="task&#45;6/main.c" name="task&#45;6/main.c">
+<area shape="rect" id="Node000001" title="Пример использования системного вызова stat() для получения информации о файле." alt="" coords="81,5,185,35"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,83,69,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,38,68,75,65,71,113,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="93,83,173,113"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="136,36,136,67,130,67,130,36"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="197,83,258,113"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="152,34,200,71,197,75,149,38"/>
+</map>
