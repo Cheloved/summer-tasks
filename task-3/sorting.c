@@ -116,11 +116,9 @@ int sort_file(char* input, char* output, char* method)
     long size = get_file_size(input);
     char* buffer = (char*)malloc(size+1);
     read_file(input, size, buffer);
-    printf(" [debug] Содержимое файла:\n%s\n", buffer);
 
     // Получение количества строк
     int lines = get_lines_count(buffer, size);
-    printf(" [debug] Кол-во непустых строк: %d\n", lines);
 
     // Получение индексов начала непустых строк
     long* idxs = (long*)malloc(sizeof(long) * lines);
