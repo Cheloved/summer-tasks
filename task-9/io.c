@@ -13,6 +13,12 @@
 
 int read_seq(char* path, int* result, int size)
 {
+    if ( !path || !result )
+    {
+        fprintf(stderr, " [E] Nullptr в read_seq()\n");
+        return -1;
+    }
+
     FILE* file = fopen(path, "r");
     if ( !file )
     {

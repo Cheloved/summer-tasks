@@ -36,26 +36,42 @@ int main(int argc, char** argv)
     if ( argc != 3 )
     {
         fprintf(stderr, " [E] Должно быть 2 аргумента: путь к файлу и кол-во элементов\n");
-        return -1;
+        return 1;
     }
 
     int size = atoi(argv[2]);
     if ( size <= 0 )
     {
         fprintf(stderr, " [E] Неверный размер\n");
-        return -2;
+        return 2;
     }
 
     int* seq = (int*)calloc(size, sizeof(int));
-    if ( !read_seq("seq.txt", seq, size) )
+    if ( !seq )
+    {
+        fprintf(stderr, " [E] Ошибка при выделении памяти для seq\n");
+        return 3;
+    }
+
+    if ( !read_seq(argv[1], seq, size) )
     {
         for ( int i = 0; i < size; i++ )
             printf("%d ", seq[i]);
+    } else {
+        fprintf(stderr, " [E] Ошибка чтения последовательности\n");
+        free(seq);
+        return 4;
     }
     printf("\n");
 
     int result_size = 0;
     int* result = (int*)calloc(size, sizeof(int));
+    if ( !result )
+    {
+        fprintf(stderr, " [E] Ошибка при выделении памяти для seq\n");
+        free(seq);
+        return 5;
+    }
     find_max_seq(seq, size, result, &result_size);
     
     printf("Максимальная последовательность: ");
