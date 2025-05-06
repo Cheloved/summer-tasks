@@ -44,6 +44,7 @@ int read_loop(int sockfd, char* connect_name)
             {
                 printf(" [E] Connection lost!\n");
                 kill(pid, SIGTERM);
+                waitpid(pid, NULL, 0); // Ожидание завершения дочернего процесса
                 break;
             }
             printf("[%s]: %s\n", connect_name, buffer);
