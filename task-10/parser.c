@@ -1,3 +1,15 @@
+/**
+ * @file parser.c
+ * @brief Реализация парсера логических выражений.
+ *
+ * Файл содержит реализацию следующих этапов обработки выражения:
+ * 1. Разбор на токены (лексический анализ),
+ * 2. Преобразование в постфиксную форму (алгоритм Дейкстры),
+ * 3. Вычисление выражения с интерактивным вводом значений переменных.
+ *
+ * @author Ракитин Илья Алексеевич
+ */
+
 #include "parser.h"
 
 char* OPERATORS[] = { "NOT", "AND", "OR", NULL };
@@ -34,6 +46,7 @@ int to_postfix(char** tokens, int size, char** postfix)
     int queue_top = -1;
     char buffer[MAX_TOKEN_LEN];
 
+    // Проход по всем входным токенам
     for ( int i = 0; i < size; i++ )
     {
         // printf("[debug] token: %s\n", tokens[i]);
@@ -150,6 +163,8 @@ int get_value(char* token)
 
     while ( 1 )
     {
+        // Считывает строку и пытается преобразовать её в число.
+        // Повторяет, пока пользователь не введет корректное число
         if ( fgets(buffer, sizeof(MAX_TOKEN_LEN), stdin) != NULL )
         {
             if ( sscanf(buffer, "%d", &number) == 1 )
