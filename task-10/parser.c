@@ -273,6 +273,9 @@ int evaluate(char** tokens, int size)
                 case IMPL: result = (1 - a) || b; break;
                 case EQ: result = a == b; break;
                 case NEQ: result = a != b; break;
+                default:
+                    fprintf(stderr, " [E] Неизвестный оператор\n");
+                    return 0;
             }
 
             // Запись обратно в стек
