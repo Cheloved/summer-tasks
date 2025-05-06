@@ -36,17 +36,16 @@ int to_postfix(char** tokens, int size, char** postfix)
 
     for ( int i = 0; i < size; i++ )
     {
-        printf("[debug] token: %s\n", tokens[i]);
-        printf("[debug] stack: ");
-        for ( int si = 0; si <= stack.top; si++ )
-            printf("%s ", stack.elems[si]);
-        printf("\n");
+        // printf("[debug] token: %s\n", tokens[i]);
+        // printf("[debug] stack: ");
+        // for ( int si = 0; si <= stack.top; si++ )
+        //     printf("%s ", stack.elems[si]);
+        // printf("\n");
 
-        printf("[debug] queue: ");
-        for ( int qi = 0; qi <= queue_top; qi++ )
-            printf("%s ", queue[qi]);
-        printf("\n\n");
-
+        // printf("[debug] queue: ");
+        // for ( int qi = 0; qi <= queue_top; qi++ )
+        //     printf("%s ", queue[qi]);
+        // printf("\n\n");
 
         // Если токен - переменная, добавить в очередь
         if ( !is_operator(tokens[i]) &&
@@ -128,7 +127,6 @@ int to_postfix(char** tokens, int size, char** postfix)
                 memset(el, 0, MAX_TOKEN_LEN);
                 pop(&stack, el);
             }
-            // stack.top--;
         }
     }
 
@@ -141,4 +139,94 @@ int to_postfix(char** tokens, int size, char** postfix)
         strcpy(postfix[i], queue[i]);
 
     return 0;
+}
+
+int get_value(char* token)
+{
+    char buffer[MAX_TOKEN_LEN];
+    int number;
+
+    printf(" > Введите значения для %s: ", token);
+
+    while ( 1 )
+    {
+        if ( fgets(buffer, sizeof(MAX_TOKEN_LEN), stdin) != NULL )
+        {
+            if ( sscanf(buffer, "%d", &number) == 1 )
+                return number;
+            else
+                fprintf(stderr, " [E] Неверный ввод. Попробуйте еще раз\n");
+        }
+    }
+
+    return -1;
+}
+
+int evaluate(char** tokens, int size)
+{
+    s_stack stack = { init_char_arr(size, MAX_TOKEN_LEN), -1, MAX_TOKENS };
+    char buffer[MAX_TOKEN_LEN];
+
+    for ( int i = 0; i < size; i++ )
+    {
+        if ( !strcmp(tokens[i], "") )
+            break;
+
+        // printf("[debug] token: \"%s\"\n", tokens[i]);
+        // printf("[debug] stack: ");
+        // for ( int si = 0; si <= stack.top; si++ )
+        //     printf("%s ", stack.elems[si]);
+        // printf("\n");
+
+        // Если токен - переменная, добавить в очередь
+        if ( !is_operator(tokens[i]) )
+        {
+            int value = get_value(tokens[i]);
+            snprintf(buffer, sizeof(MAX_TOKEN_LEN), "%d", value);
+            push(&stack, buffer);
+            continue;
+        }
+
+        // Если токен - оператор
+        if ( is_operator(tokens[i]) ) 
+        {
+            int result = 0;
+
+            // Отдельно для унарной операции НЕ
+            // из стека извлекается один элемент,
+            // а его отрицание кладется обратно
+            if ( !strcmp(tokens[i], "NOT") )
+            {
+                pop(&stack, buffer);
+                result = 1 - atoi(buffer);
+
+                snprintf(buffer, sizeof(MAX_TOKEN_LEN), "%d", result);
+                push(&stack, buffer);
+                continue;
+            }
+
+            // Выбор 2 элементов из стека для
+            // бинарных операций
+            pop(&stack, buffer);
+            int a = atoi(buffer);
+
+            pop(&stack, buffer);
+            int b = atoi(buffer);
+
+            // Получение результата
+            if ( !strcmp(tokens[i], "AND") )
+                result = a * b;
+
+            if ( !strcmp(tokens[i], "OR") )
+                result = a + b;
+
+            // Запись обратно в стек
+            snprintf(buffer, sizeof(MAX_TOKEN_LEN), "%d", result);
+            push(&stack, buffer);
+        }
+    }
+    
+    // Последний оставшийся в стеке элемент и есть результат
+    peek(stack, buffer);
+    return atoi(buffer);
 }

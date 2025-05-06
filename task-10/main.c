@@ -14,7 +14,7 @@ int main()
 
     int tokens_len = tokenize(expr, tokens);
 
-    printf("Token len: %d. Tokens: ", tokens_len);
+    printf("Кол-во токенов: %d\nТокены: ", tokens_len);
     for ( int i = 0; i < tokens_len; i++ )
         printf("\"%s\" ", tokens[i]);
     printf("\n");
@@ -26,6 +26,9 @@ int main()
     for ( int i = 0; i < tokens_len; i++ )
         printf("%s ", postfix[i]);
     printf("\n");
+
+    int result = evaluate(postfix, tokens_len);
+    printf("Результат вычисления: %d\n", result);
 
     return 0;
 }

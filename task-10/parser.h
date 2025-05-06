@@ -12,3 +12,7 @@ extern char* OPERATORS[];
 int is_operator(char* token);
 
 int to_postfix(char** tokens, int size, char** postfix);
+
+int get_value(char* token);
+
+int evaluate(char** tokens, int size);
