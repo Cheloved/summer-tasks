@@ -168,9 +168,16 @@ int get_value(char* token)
         if ( fgets(buffer, sizeof(MAX_TOKEN_LEN), stdin) != NULL )
         {
             if ( sscanf(buffer, "%d", &number) == 1 )
-                return number;
-            else
+            {
+                if ( number == 0 || number == 1 )
+                    return number;
+                else
+                    fprintf(stderr, " [E] Неверный ввод. Для переменных допустимы только значения 0 и 1\n");
+            } else {
                 fprintf(stderr, " [E] Неверный ввод. Попробуйте еще раз\n");
+            }
+        } else {
+            fprintf(stderr, " [E] Ошибка при чтении\n");
         }
     }
 
