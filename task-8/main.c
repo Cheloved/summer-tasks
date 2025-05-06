@@ -40,7 +40,7 @@ void handle_sigint_signal(int sig)
 {
     printf(" Row in a: %d, col in b: %d\n", global_row, global_col); 
 
-    signal(SIGINT, SIG_DFL);
+    signal(sig, SIG_DFL);
 }
 
 /**
@@ -59,7 +59,7 @@ void handle_sigint_sigaction(int sig)
     sa.sa_handler = SIG_DFL;
     sigemptyset(&sa.sa_mask);
     sa.sa_flags = 0;
-    sigaction(SIGINT, &sa, NULL);
+    sigaction(sig, &sa, NULL);
 }
 
 /**
