@@ -22,10 +22,26 @@
 #include "stack.h"
 
 /**
- * @var OPERATORS
- * @brief Массив поддерживаемых операторов.
+ * @struct s_operator 
+ * @brief Содержит информацию о операторе
  */
-extern char* OPERATORS[];
+typedef struct
+{
+    char* name;
+    int priority;
+} s_operator;
+
+/**
+ * @var OPERATORS
+ * @brief Массив структур поддерживаемых операторов
+ */
+extern s_operator OPERATORS[];
+
+/**
+ * @enum ENUM_OPERATORS 
+ * @brief Содержит информацию о операторе
+ */
+enum ENUM_OPERATORS { NOT, AND, NAND, OR, XOR, NOR, IMPL, EQ, NEQ };
 
 /**
  * @brief Проверяет, является ли строка допустимым оператором.
@@ -34,6 +50,24 @@ extern char* OPERATORS[];
  * @return Возвращает 1, если токен — оператор, иначе — 0.
  */
 int is_operator(char* token);
+
+/**
+ * @brief Получает приоритет оператора.
+ *
+ * 0 - самый высокий приоритет. Чем число больше, тем приоритет меньше
+ *
+ * @param token Входной токен.
+ * @return Приоритет оператора
+ */
+int get_priority(char* operator);
+
+/**
+ * @brief Получает индекс оператора в списке
+ *
+ * @param token Входной токен.
+ * @return Индекс оператора
+ */
+int get_oper_index(char* operator);
 
 /**
  * @brief Преобразует инфиксное выражение в постфиксное (обратная польская запись).
