@@ -1,3 +1,14 @@
+/**
+ * @file reading.c
+ * @brief Реализация функций для чтения и генерации матриц.
+ *
+ * Файл содержит реализацию двух основных функций:
+ * - `read_matrix()` — для чтения матрицы из текстового файла,
+ * - `generate_matrix()` — для генерации случайной матрицы и записи её в файл.
+ *
+ * @author Ракитин Илья Алексеевич
+ */
+
 #include "reading.h"
 
 int read_matrix(char* path, int** result, int MAX_ROWS, int MAX_COLS,
@@ -12,11 +23,15 @@ int read_matrix(char* path, int** result, int MAX_ROWS, int MAX_COLS,
 
     char line[MAX_LINE_LEN];
     int row = 0;
+
+    // Считывает по одной строке, пока файл не закончится
+    // или пока не дойдет до максимального кол-ва строк
     while ( fgets(line, sizeof(line), file) && row < MAX_ROWS )
     {
         int col = 0;
         char* token = strtok(line, " \n");
 
+        // Копирование чисел, разделенных пробелами
         while ( token && col < MAX_COLS )
         {
             result[row][col++] = atoi(token);
