@@ -16,6 +16,7 @@ int tokenize(char* input, char** output)
     char* start_ptr = input;    // Указатель начала текущего токена
     char* ptr = input;          // Указатель на текущий символ
     int tokens_found = 0;       // Кол-во найденных токенов
+    int last_bracket = 0;
 
     // Проход по строке
     while ( *ptr )
@@ -35,6 +36,7 @@ int tokenize(char* input, char** output)
             output[current_token_idx++][0] = *ptr;
             tokens_found++;
 
+            last_bracket = 1;
             start_ptr = ptr + 1;
         }
 
@@ -47,10 +49,18 @@ int tokenize(char* input, char** output)
                 tokens_found++;
             }
 
+            last_bracket = 0;
             start_ptr = ptr + 1;
         }
 
         ptr++;
+    }
+
+    // Обработка последнего токена
+    if ( !last_bracket )
+    {
+        strncpy(output[current_token_idx++], start_ptr, ptr-start_ptr);
+        tokens_found++;
     }
 
     return tokens_found;
