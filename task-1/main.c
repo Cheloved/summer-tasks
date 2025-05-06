@@ -24,6 +24,10 @@
 
 #define DEBUG 0
 
+/**
+ * @struct s_data
+ * @brief структура для передачи данных в качестве аргумента в другой поток
+ */
 typedef struct
 {
     uint32_t iter;     // Текущая глубина разделения (для отладки)
@@ -33,14 +37,23 @@ typedef struct
     int32_t* result;   // Массив, куда будет сохранен результат слияния
 } s_data;
 
+/**
+ * @brief объединяет массивы l и r в result
+ *
+ * @param result Динамический массив чисел, куда будет сохранен результат
+ * @param l Динамический массив результата левого дочернего потока
+ * @param lsize Кол-во элементов в массиве l
+ * @param r Аналогично l для правой части
+ * @param rsize Аналогично lsize для правой части
+ */
 void merge_arrays(int32_t* result, int32_t* l, int lsize, int32_t* r, int rsize)
 {
-    // === Соединение результатов дочерних потоков === //
     int32_t left = 0;  // Индекс в массиве результатов левой части
     int32_t right = 0; // Аналогично в провой
     int32_t i = 0;     // Индекс в текущем массиве результатов
 
-    // Объединение массивов, пока один из них не закончится
+    // Объединение массивов с сортировкой,
+    // пока один из них не закончится
     while ( left < lsize && right < rsize - 1 )
     {
         if ( l[left] < r[right] ) 
@@ -57,9 +70,14 @@ void merge_arrays(int32_t* result, int32_t* l, int lsize, int32_t* r, int rsize)
         result[i++] = r[right++];
 }
 
+/**
+ * @brief сортировка, выполняемая отдельными потоками
+ *
+ * @param arg структура входных данных, содержит указатель на s_data
+ */
 void* merge_sort_thread(void* arg)
 {
-    s_data* data = (s_data*)arg; // Структура входных данных
+    s_data* data = (s_data*)arg;
 
     // Длина отрезка массива для данного процесса
     int32_t length = data->right_idx - data->left_idx + 1;
@@ -74,7 +92,7 @@ void* merge_sort_thread(void* arg)
     // Вычисление середины для дальнейшего разбиения
     int32_t mid_idx = data->left_idx + (length-1) / 2;
 
-    // Запуск новых потоков для левой и правой частей
+    // Запуск новых потоков для левой и правой частей.
     // Один из них будет от текущего левого края до середины,
     // а другой от середины+1 до правого края
     pthread_t left_thread, right_thread;
@@ -105,7 +123,7 @@ void* merge_sort_thread(void* arg)
     pthread_join(left_thread, NULL);
     pthread_join(right_thread, NULL);
 
-    // === Соединение результатов дочерних потоков === //
+    // Соединение результатов дочерних потоков
     merge_arrays(data->result, result_left, result_left_size, result_right, result_right_size);
 
     // Освобождение результатов дочерних потоков из памяти
@@ -115,9 +133,16 @@ void* merge_sort_thread(void* arg)
     return NULL;
 }
 
+/**
+ * @brief сортировка массива параллельным Merge Sort
+ *
+ * @param array массив, который нужно отсортировать
+ * @param length длина массива array
+ * @param result массив, в который будет сохранен результат
+ */
 int merge_sort(int32_t* array, uint32_t length, int32_t* result)
 {
-    // Первоначальное указание индексов и запуск потока
+    // Первоначальное указание индексов
     pthread_t thread_id;
     s_data data = { .iter = 0,
                     .ar = array,
@@ -125,6 +150,7 @@ int merge_sort(int32_t* array, uint32_t length, int32_t* result)
                     .right_idx = length - 1,
                     .result = result};
 
+    // Запуск потока и ожидание завершения
     pthread_create(&thread_id, NULL, merge_sort_thread, &data);
     pthread_join(thread_id, NULL);
 
@@ -151,6 +177,5 @@ int main()
     printf("\n");
 
     free(result);
-
     return 0;
 }
