@@ -39,8 +39,11 @@ int get_priority(char* operator)
 {
     int i = 0;
     while ( OPERATORS[i].name )
+    {
         if ( !strcmp(operator, OPERATORS[i].name) )
-            return OPERATORS[i++].priority;
+            return OPERATORS[i].priority;
+        i++;
+    }
 
     return -1;
 }
