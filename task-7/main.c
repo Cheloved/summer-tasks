@@ -89,24 +89,24 @@ int main(int argc, char** argv)
     if ( argc != 2 )
     {
         fprintf(stderr, " [E] Должен быть предоставлен 1 файл для чтения\n");
-        return -1;
+        return 1;
+    }
+
+    pid_t pid = fork();
+    if ( pid < 0 )
+    {
+        fprintf(stderr, " [E] Ошибка при fork()\n");
+        return 3;
     }
 
     FILE* file = fopen(argv[1], "r");
     if ( !file )
     {
         perror(" [E] Ошибка при чтении файла");
-        return -2;
+        return 2;
     }
 
     long file_size = get_file_size(file);
-
-    pid_t pid = fork();
-    if ( pid < 0 )
-    {
-        fprintf(stderr, " [E] Ошибка при fork()\n");
-        return -3;
-    }
 
     FILE* out;
     if ( pid == 0 )
@@ -117,7 +117,7 @@ int main(int argc, char** argv)
     if ( !out )
     {
         perror(" [E] Ошибка при открытии файла записи");
-        return -4;
+        return 4;
     }
 
     copy_from_to(file, file_size, out);
