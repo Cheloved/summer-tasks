@@ -36,11 +36,9 @@ char** init_char_arr(int sizex, int sizey)
 int free_char_arr(char** ar, int sizex)
 {
     for ( int i = 0; i < sizex; i++ )
-        if ( ar[i] ) 
-            free(ar[i]);
+        free(ar[i]);
 
-    if ( ar )
-        free(ar);
+    free(ar);
 
     return 0;
 }

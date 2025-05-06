@@ -165,7 +165,7 @@ int get_value(char* token)
     {
         // Считывает строку и пытается преобразовать её в число.
         // Повторяет, пока пользователь не введет корректное число
-        if ( fgets(buffer, sizeof(MAX_TOKEN_LEN), stdin) != NULL )
+        if ( fgets(buffer, MAX_TOKEN_LEN, stdin) != NULL )
         {
             if ( sscanf(buffer, "%d", &number) == 1 )
             {
@@ -204,7 +204,7 @@ int evaluate(char** tokens, int size)
         if ( !is_operator(tokens[i]) )
         {
             int value = get_value(tokens[i]);
-            snprintf(buffer, sizeof(MAX_TOKEN_LEN), "%d", value);
+            snprintf(buffer, MAX_TOKEN_LEN, "%d", value);
             push(&stack, buffer);
             continue;
         }
@@ -243,7 +243,7 @@ int evaluate(char** tokens, int size)
                 result = a + b;
 
             // Запись обратно в стек
-            snprintf(buffer, sizeof(MAX_TOKEN_LEN), "%d", result);
+            snprintf(buffer, MAX_TOKEN_LEN, "%d", result);
             push(&stack, buffer);
         }
     }
