@@ -100,6 +100,11 @@ void* merge_sort_thread(void* arg)
     // Выделение памяти для результата дочернего левого потока
     int32_t result_left_size = mid_idx - data->left_idx + 1;
     int32_t* result_left = (int32_t*)(malloc(sizeof(int32_t) * result_left_size));
+    if ( !result_left )
+    {
+        fprintf(stderr, " [E] Ошибка при выделении памяти!\n");
+        return NULL;
+    }
 
     // Сбор остальных данных в структуру
     s_data data_left = { .iter = data->iter + 1,
@@ -111,6 +116,12 @@ void* merge_sort_thread(void* arg)
     // Аналогично для правой части
     int32_t result_right_size = data->right_idx - mid_idx + 1;
     int32_t* result_right = (int32_t*)(malloc(sizeof(int32_t) * result_right_size));
+    if ( !result_right )
+    {
+        fprintf(stderr, " [E] Ошибка при выделении памяти!\n");
+        free(result_left);
+        return NULL;
+    }
     s_data data_right = { .iter = data->iter + 1,
                          .ar = data->ar,
                          .left_idx = mid_idx + 1,
