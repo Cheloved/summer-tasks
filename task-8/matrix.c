@@ -44,11 +44,9 @@ int** init_mat_square(int size)
 int free_mat_square(int** mat, int size)
 {
     for ( int i = 0; i < size; i++ )
-        if ( mat[i] ) 
-            free(mat[i]);
+        free(mat[i]);
 
-    if ( mat )
-        free(mat);
+    free(mat);
 
     return 0;
 }
