@@ -24,21 +24,27 @@ int read_loop(int sockfd, char* connect_name)
     // Родительский процесс ждет сообщения и выводит его,
     // а дочерний ожидает пользовательского ввода
     // и отправляет данные
-    while( 1 )
+
+    if ( pid == 0 )
     {
-        if ( pid == 0 )
-        {
-            char buffer[MAX_MESSAGE_LEN];
-            fgets(buffer, MAX_MESSAGE_LEN, stdin);
+        // Считывает данные из stdin до EOF
+        char buffer[MAX_MESSAGE_LEN];
+        while ( fgets(buffer, MAX_MESSAGE_LEN, stdin) )
             write(sockfd, buffer, strlen(buffer)+1);
-        } else {
-            char buffer[MAX_MESSAGE_LEN];
+
+        close(sockfd);
+        exit(EXIT_SUCCESS);
+    } else {
+        char buffer[MAX_MESSAGE_LEN];
+        while (1)
+        {
+            // Пока соединение установлено, получает данные через сокет
             int ret_code = read(sockfd, buffer, sizeof(buffer));
             if ( ret_code == 0 )
             {
                 printf(" [E] Connection lost!\n");
                 kill(pid, SIGTERM);
-                return -1;
+                break;
             }
             printf("[%s]: %s\n", connect_name, buffer);
         }
