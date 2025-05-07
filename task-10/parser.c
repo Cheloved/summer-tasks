@@ -12,55 +12,6 @@
 
 #include "parser.h"
 
-s_operator OPERATORS[] = {
-    { "NOT", 0 },
-    { "AND", 1 },
-    { "NAND", 1 },
-    { "OR", 2 },
-    { "XOR", 2 },
-    { "NOR", 2 },
-    { "IMPL", 3 },
-    { "EQ", 4 },
-    { "NEQ", 4 },
-    { NULL, 10 }
-};
-
-int is_operator(char* token)
-{
-    int i = 0;
-    while ( OPERATORS[i].name )
-        if ( !strcmp(token, OPERATORS[i++].name) )
-            return 1;
-
-    return 0;
-}
-
-int get_priority(char* operator)
-{
-    int i = 0;
-    while ( OPERATORS[i].name )
-    {
-        if ( !strcmp(operator, OPERATORS[i].name) )
-            return OPERATORS[i].priority;
-        i++;
-    }
-
-    return -1;
-}
-
-int get_oper_index(char* operator)
-{
-    int i = 0;
-    while ( OPERATORS[i].name )
-    {
-        if ( !strcmp(operator, OPERATORS[i].name) )
-            return i;
-        i++;
-    }
-
-    return -1;
-}
-
 int to_postfix(char** tokens, int size, char** postfix)
 {
     s_stack stack = { init_char_arr(size, MAX_TOKEN_LEN), -1, MAX_TOKENS };
@@ -168,76 +119,6 @@ int to_postfix(char** tokens, int size, char** postfix)
     free_char_arr(queue, size);
 
     return 0;
-}
-
-int get_value(char* token)
-{
-    char buffer[MAX_TOKEN_LEN];
-    int number;
-
-    printf(" > Введите значения для %s: ", token);
-
-    while ( 1 )
-    {
-        // Считывает строку и пытается преобразовать её в число.
-        // Повторяет, пока пользователь не введет корректное число
-        if ( fgets(buffer, MAX_TOKEN_LEN, stdin) != NULL )
-        {
-            if ( sscanf(buffer, "%d", &number) == 1 )
-            {
-                if ( number == 0 || number == 1 )
-                    return number;
-                else
-                    fprintf(stderr, " [E] Неверный ввод. Для переменных допустимы только значения 0 и 1\n");
-            } else {
-                fprintf(stderr, " [E] Неверный ввод. Попробуйте еще раз\n");
-            }
-        } else {
-            fprintf(stderr, " [E] Ошибка при чтении\n");
-        }
-    }
-
-    return -1;
-}
-
-void free_vars_arr(s_variable* vars, int size)
-{
-    for ( int i = 0; i < size; i++ )
-        free(vars[i].name);
-
-    free(vars);
-}
-
-s_variable* init_vars_arr(int size)
-{
-    s_variable* vars = (s_variable*)calloc(size, sizeof(s_variable));
-    if ( !vars )
-    {
-        fprintf(stderr, " [E] Ошибка при выделении памяти для переменных\n");
-        return NULL;
-    }
-
-    for ( int i = 0; i < size; i++ )
-    {
-        vars[i].name = (char*)calloc(MAX_TOKEN_LEN, sizeof(char));
-        if ( !vars[i].name )
-        {
-            fprintf(stderr, " [E] Ошибка при выделении памяти для переменных\n");
-            free_vars_arr(vars, size);
-            return NULL;
-        }
-    }
-    
-    return vars;
-}
-
-int find_var(s_variable* vars, int n_vars, char* token)
-{
-    for ( int i = 0; i < n_vars; i++ )
-        if ( !strcmp(token, vars[i].name) )
-            return i;
-
-    return -1;
 }
 
 int evaluate(char** tokens, int size)
