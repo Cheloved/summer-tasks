@@ -94,7 +94,7 @@ int to_postfix(char** tokens, int size, char** postfix)
 
         // Если правая - выгружать из стека в очередь всё,
         // пока не дойдет до левой
-        if ( !strcmp(tokens[i], ")") )
+        if ( !strcmp(tokens[i], ")") && !is_empty(stack) )
         {
             pop(&stack, buffer);
 
@@ -144,6 +144,15 @@ int evaluate(char** tokens, int size)
     // === Проход по постфиксной записи === //
     for ( int i = 0; i < size; i++ )
     {
+        if ( !strcmp(tokens[i], "(") ||
+             !strcmp(tokens[i], ")"))
+        {
+            fprintf(stderr, " [E] Некорректное выражение\n");
+            free_char_arr(stack.elems, size); 
+            free_vars_arr(vars, size);
+            return -1;
+        }
+
         if ( !strcmp(tokens[i], "") )
             break;
 
