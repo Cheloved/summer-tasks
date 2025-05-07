@@ -32,7 +32,7 @@ int find_max_seq(int* seq, int size, int* result, int* result_size)
     int len = 1;
 
     // Проход по заданной последовательности
-    for ( int i = 1; i <= size; i++ )
+    for ( int i = 1; i < size; i++ )
     {
         // Если числа продолжают возрастать,
         // продолжить считать сумму
@@ -42,13 +42,14 @@ int find_max_seq(int* seq, int size, int* result, int* result_size)
             // отрицательные числа,
             // они отсекаются, т.к. иначе входная (-1 4 8)
             // выдаст в ответ (-1 4 8), а не (4 8)
-            if ( (seq[i] >= 0) && (seq[i-1] < 0) )
+            if ( seq[i-1] < 0 )
             {
                 start_idx = i;
                 sum = seq[i];
                 len = 1;
                 continue;
-            }
+            } 
+
             sum += seq[i];
             len++;
             continue;
@@ -72,6 +73,14 @@ int find_max_seq(int* seq, int size, int* result, int* result_size)
         sum = seq[i];
         len = 1;
     }
+
+    // Проверка последней последовательности
+    if ( (sum > max_sum) || ((sum == max_sum) && (len > max_len)) )
+    {
+        max_start_idx = start_idx;
+        max_sum = sum;
+        max_len = len;
+    } 
 
     // Запись элементов в выходной массив
     int n = 0;
