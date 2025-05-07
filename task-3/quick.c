@@ -38,6 +38,9 @@ int quick_sort(char* input, long* array, long length, long* result)
     if ( !left || !middle || !right )
     {
         fprintf(stderr, " [E] Ошибка при выделении памяти в quick_sort()\n");
+        free(left);
+        free(middle);
+        free(right);
         return -1;
     }
 
@@ -58,6 +61,9 @@ int quick_sort(char* input, long* array, long length, long* result)
     if ( !left_result )
     {
         fprintf(stderr, " [E] Ошибка при выделении памяти в quick_sort()\n");
+        free(left);
+        free(middle);
+        free(right);
         return -1;
     }
 
@@ -72,6 +78,10 @@ int quick_sort(char* input, long* array, long length, long* result)
     if ( !right_result )
     {
         fprintf(stderr, " [E] Ошибка при выделении памяти в quick_sort()\n");
+        free(left_result);
+        free(left);
+        free(middle);
+        free(right);
         return -1;
     }
 
