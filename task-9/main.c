@@ -39,12 +39,17 @@ int main(int argc, char** argv)
     }
 
     int size = get_seq_len(argv[1]);
+    if ( size < 0 )
+    {
+        fprintf(stderr, " [E] Ошибка получения длины\n");
+        return 2;
+    }
 
     int* seq = (int*)calloc(size, sizeof(int));
     if ( !seq )
     {
         fprintf(stderr, " [E] Ошибка при выделении памяти для seq\n");
-        return 2;
+        return 3;
     }
 
     if ( !read_seq(argv[1], seq, size) )
@@ -54,7 +59,7 @@ int main(int argc, char** argv)
     } else {
         fprintf(stderr, " [E] Ошибка чтения последовательности\n");
         free(seq);
-        return 3;
+        return 4;
     }
     printf("\n");
 
@@ -64,7 +69,7 @@ int main(int argc, char** argv)
     {
         fprintf(stderr, " [E] Ошибка при выделении памяти для seq\n");
         free(seq);
-        return 4;
+        return 5;
     }
     find_max_seq(seq, size, result, &result_size);
     
