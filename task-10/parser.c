@@ -154,14 +154,13 @@ int to_postfix(char** tokens, int size, char** postfix)
         // пока не дойдет до левой
         if ( !strcmp(tokens[i], ")") )
         {
-            char el[MAX_TOKEN_LEN];
-            pop(&stack, el);
+            pop(&stack, buffer);
 
-            while ( strcmp(el, "(") )
+            while ( strcmp(buffer, "(") )
             {
-                strcpy(queue[++queue_top], el);
-                memset(el, 0, MAX_TOKEN_LEN);
-                pop(&stack, el);
+                strcpy(queue[++queue_top], buffer);
+                memset(buffer, 0, MAX_TOKEN_LEN);
+                pop(&stack, buffer);
             }
         }
     }
@@ -209,6 +208,12 @@ int get_value(char* token)
 
 int evaluate(char** tokens, int size)
 {
+    if ( !tokens || size < 1 )
+    {
+        fprintf(stderr, " [E] Пустой массив в evaluate()\n");
+        return -1;
+    }
+
     s_stack stack = { init_char_arr(size, MAX_TOKEN_LEN), -1, MAX_TOKENS };
     char buffer[MAX_TOKEN_LEN];
 
@@ -242,6 +247,11 @@ int evaluate(char** tokens, int size)
             // а его отрицание кладется обратно
             if ( !strcmp(tokens[i], "NOT") )
             {
+                if ( is_empty(stack) )
+                {
+                    fprintf(stderr, " [E] Недостаточно переменных для выполнения операции NOT\n");
+                    return -1;
+                }
                 pop(&stack, buffer);
                 result = 1 - atoi(buffer);
 
@@ -252,6 +262,11 @@ int evaluate(char** tokens, int size)
 
             // Выбор 2 элементов из стека для
             // бинарных операций
+            if ( stack.top < 1 )
+            {
+                fprintf(stderr, " [E] Недостаточно переменных для выполнения бинарной операции\n");
+                return -1;
+            }
             pop(&stack, buffer);
             int a = atoi(buffer);
 
@@ -274,8 +289,8 @@ int evaluate(char** tokens, int size)
                 case EQ: result = a == b; break;
                 case NEQ: result = a != b; break;
                 default:
-                    fprintf(stderr, " [E] Неизвестный оператор\n");
-                    return 0;
+                    fprintf(stderr, " [E] Неизвестный оператор %s\n", tokens[i]);
+                    return -1;
             }
 
             // Запись обратно в стек
@@ -284,6 +299,11 @@ int evaluate(char** tokens, int size)
         }
     }
     
+    if ( is_empty(stack) )
+    {
+        fprintf(stderr, " [E] Некорректное выражение\n");
+        return -1;
+    }
     // Последний оставшийся в стеке элемент и есть результат
     peek(stack, buffer);
     return atoi(buffer);
