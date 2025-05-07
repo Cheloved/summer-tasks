@@ -21,7 +21,7 @@
 #include "dynamic.h"
 #include "stack.h"
 #include "operator.h"
-
+#include "variable.h"
 
 /**
  * @brief Преобразует инфиксное выражение в постфиксное (обратная польская запись).

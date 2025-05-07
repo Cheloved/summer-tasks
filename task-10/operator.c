@@ -5,7 +5,20 @@
  * @author Ракитин Илья Алексеевич
  */
 
-#include "operator.c"
+#include "operator.h"
+
+s_operator OPERATORS[] = {
+    { "NOT", 0 },
+    { "AND", 1 },
+    { "NAND", 1 },
+    { "OR", 2 },
+    { "XOR", 2 },
+    { "NOR", 2 },
+    { "IMPL", 3 },
+    { "EQ", 4 },
+    { "NEQ", 4 },
+    { NULL, 10 }
+};
 
 int is_operator(char* token)
 {

@@ -13,6 +13,10 @@
  */
 #pragma once
 
+#include <stdio.h>
+#include <stdlib.h>
+#include "token.h"
+
 /**
  * @struct s_variable
  * @brief Содержит информацию о переменной
@@ -61,4 +65,4 @@ int get_value(char* token);
  * @param token Токен, которому нужно найти соответствие
  * @return Возвращает индекс переменной или -1, если она не найдена
  */
-int find_var(s_variable* vars, int n_vars, char* token)
+int find_var(s_variable* vars, int n_vars, char* token);
