@@ -143,7 +143,7 @@ int main(int argc, char** argv)
     if ( argc < 2 )
     {
         fprintf(stderr, "Укажите хотя бы один файл для получения информации\n");
-        return -1;
+        return 1;
     }
 
     for ( int i = 1; i < argc; i++ )
