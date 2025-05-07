@@ -22,8 +22,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#define DEBUG 0
-
 /**
  * @struct s_data
  * @brief структура для передачи данных в качестве аргумента в другой поток
