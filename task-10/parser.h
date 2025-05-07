@@ -32,6 +32,16 @@ typedef struct
 } s_operator;
 
 /**
+ * @struct s_variable
+ * @brief Содержит информацию о переменной
+ */
+typedef struct
+{
+    char* name;
+    int value;
+} s_variable;
+
+/**
  * @var OPERATORS
  * @brief Массив структур поддерживаемых операторов
  */

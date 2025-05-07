@@ -112,31 +112,22 @@ int to_postfix(char** tokens, int size, char** postfix)
 
             // Если в вершине стека оператор с более высоким приоритетом,
             // добавить в стек
-            int priority = get_priority(tokens[i]);
-
-            peek(stack, buffer);
-            int top_priority = get_priority(buffer);
-
-            if ( priority < top_priority )
-            {
-                push(&stack, tokens[i]);
-                continue;
-            }
-
             // Если нет, выгрузить из стека всё в очередь
             // до появления левой скобки или оператора 
             // c большим приоритетом
+            int priority = get_priority(tokens[i]);
             while ( !is_empty(stack) )
             {
+                peek(stack, buffer);
+
                 if ( !strcmp(buffer, "(") )
                     break;
 
-                top_priority = get_priority(buffer);
+                int top_priority = get_priority(buffer);
                 if ( priority < top_priority )
                     break;
 
                 pop(&stack, queue[++queue_top]);
-                peek(stack, buffer);
             }
 
             // После этого добавить токен в стек
@@ -156,7 +147,7 @@ int to_postfix(char** tokens, int size, char** postfix)
         {
             pop(&stack, buffer);
 
-            while ( strcmp(buffer, "(") )
+            while ( strcmp(buffer, "(") && !is_empty(stack) )
             {
                 strcpy(queue[++queue_top], buffer);
                 memset(buffer, 0, MAX_TOKEN_LEN);
@@ -206,6 +197,46 @@ int get_value(char* token)
     return -1;
 }
 
+void free_vars_arr(s_variable* vars, int size)
+{
+    for ( int i = 0; i < size; i++ )
+        free(vars[i].name);
+
+    free(vars);
+}
+
+s_variable* init_vars_arr(int size)
+{
+    s_variable* vars = (s_variable*)calloc(size, sizeof(s_variable));
+    if ( !vars )
+    {
+        fprintf(stderr, " [E] Ошибка при выделении памяти для переменных\n");
+        return NULL;
+    }
+
+    for ( int i = 0; i < size; i++ )
+    {
+        vars[i].name = (char*)calloc(MAX_TOKEN_LEN, sizeof(char));
+        if ( !vars[i].name )
+        {
+            fprintf(stderr, " [E] Ошибка при выделении памяти для переменных\n");
+            free_vars_arr(vars, size);
+            return NULL;
+        }
+    }
+    
+    return vars;
+}
+
+int find_var(s_variable* vars, int n_vars, char* token)
+{
+    for ( int i = 0; i < n_vars; i++ )
+        if ( !strcmp(token, vars[i].name) )
+            return i;
+
+    return -1;
+}
+
 int evaluate(char** tokens, int size)
 {
     if ( !tokens || size < 1 )
@@ -217,6 +248,13 @@ int evaluate(char** tokens, int size)
     s_stack stack = { init_char_arr(size, MAX_TOKEN_LEN), -1, MAX_TOKENS };
     char buffer[MAX_TOKEN_LEN];
 
+    // === Объявление массива переменных === //
+    int n_vars = 0;
+    s_variable* vars = init_vars_arr(size);
+    if ( !vars )
+        return -1;
+
+    // === Проход по постфиксной записи === //
     for ( int i = 0; i < size; i++ )
     {
         if ( !strcmp(tokens[i], "") )
@@ -228,7 +266,7 @@ int evaluate(char** tokens, int size)
         //     printf("%s ", stack.elems[si]);
         // printf("\n");
 
-        // Если токен - переменная, добавить в очередь
+        // Если токен - переменная, добавить в стек
         if ( !is_operator(tokens[i]) )
         {
             // Обработка числовых выражений
@@ -243,9 +281,25 @@ int evaluate(char** tokens, int size)
                 push(&stack, "1");
                 continue;
             }
+
+            // Поиск уже занесенных в память переменных
+            int var_idx = find_var(vars, n_vars, tokens[i]);
+            if ( var_idx >= 0 )
+            {
+                snprintf(buffer, MAX_TOKEN_LEN, "%d", vars[var_idx].value);
+                push(&stack, buffer);
+                continue;
+            }
+
+            // Если не найдено, создание новой
             int value = get_value(tokens[i]);
             snprintf(buffer, MAX_TOKEN_LEN, "%d", value);
             push(&stack, buffer);
+
+            strcpy(vars[n_vars].name, tokens[i]);
+            vars[n_vars].value = value;
+            n_vars++;
+
             continue;
         }
 
@@ -316,7 +370,12 @@ int evaluate(char** tokens, int size)
         fprintf(stderr, " [E] Некорректное выражение\n");
         return -1;
     }
+
     // Последний оставшийся в стеке элемент и есть результат
     peek(stack, buffer);
+
+    free_char_arr(stack.elems, size); 
+    free_vars_arr(vars, size);
+
     return atoi(buffer);
 }
