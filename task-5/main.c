@@ -61,7 +61,7 @@ int main()
     if ( !handle )
     {
         fprintf(stderr, "Не удалось открыть libc\n");
-        return -1;
+        return 1;
     }
 
     // Получние sys_errlist
@@ -71,7 +71,7 @@ int main()
     {
         fprintf(stderr, "Не удалось найти sys_errlist\n");
         dlclose(handle);
-        return -1;
+        return 2;
     } 
 
     file = open("not_exist.txt", O_RDONLY);
