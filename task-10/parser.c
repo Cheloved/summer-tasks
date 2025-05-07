@@ -164,6 +164,9 @@ int to_postfix(char** tokens, int size, char** postfix)
     for ( int i = 0; i < queue_top+1; i++ )
         strcpy(postfix[i], queue[i]);
 
+    free_char_arr(stack.elems, size);
+    free_char_arr(queue, size);
+
     return 0;
 }
 
@@ -252,7 +255,10 @@ int evaluate(char** tokens, int size)
     int n_vars = 0;
     s_variable* vars = init_vars_arr(size);
     if ( !vars )
+    {
+        free_char_arr(stack.elems, size);
         return -1;
+    }
 
     // === Проход по постфиксной записи === //
     for ( int i = 0; i < size; i++ )
@@ -316,6 +322,8 @@ int evaluate(char** tokens, int size)
                 if ( is_empty(stack) )
                 {
                     fprintf(stderr, " [E] Недостаточно переменных для выполнения операции NOT\n");
+                    free_char_arr(stack.elems, size); 
+                    free_vars_arr(vars, size);
                     return -1;
                 }
                 pop(&stack, buffer);
@@ -331,6 +339,8 @@ int evaluate(char** tokens, int size)
             if ( stack.top < 1 )
             {
                 fprintf(stderr, " [E] Недостаточно переменных для выполнения бинарной операции\n");
+                free_char_arr(stack.elems, size); 
+                free_vars_arr(vars, size);
                 return -1;
             }
             pop(&stack, buffer);
@@ -356,6 +366,8 @@ int evaluate(char** tokens, int size)
                 case NEQ: result = a != b; break;
                 default:
                     fprintf(stderr, " [E] Неизвестный оператор %s\n", tokens[i]);
+                    free_char_arr(stack.elems, size); 
+                    free_vars_arr(vars, size);
                     return -1;
             }
 
@@ -368,11 +380,12 @@ int evaluate(char** tokens, int size)
     if ( is_empty(stack) )
     {
         fprintf(stderr, " [E] Некорректное выражение\n");
-        return -1;
+        strcpy(buffer, "-1");
+    } else
+    {
+        // Последний оставшийся в стеке элемент и есть результат
+        peek(stack, buffer);
     }
-
-    // Последний оставшийся в стеке элемент и есть результат
-    peek(stack, buffer);
 
     free_char_arr(stack.elems, size); 
     free_vars_arr(vars, size);
