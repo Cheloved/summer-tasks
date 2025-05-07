@@ -34,6 +34,7 @@ int** init_mat_square(int size)
         if ( !result[i] )
         {
             fprintf(stderr, " [E] Ошибка при выделении памяти под матрицу\n");
+            free_mat_square(result, size);
             return NULL;
         }
     }

@@ -82,7 +82,7 @@ int main(int argc, char** argv)
     {
         fprintf(stderr, "Укажите способ изменения реакции(signal/sigaction)\n");
         fprintf(stderr, "или generate для генерации матриц a.txt и b.txt");
-        return -1;
+        return 1;
     }
 
     if ( !strcmp(argv[1], "signal") )
@@ -101,7 +101,7 @@ int main(int argc, char** argv)
     } else {
         fprintf(stderr, "Неверный аргумент!\n");
         fprintf(stderr, "Возможные варианты: signal, sigaction, generate\n");
-        return -2;
+        return 2;
     }
 
     int** mat_a = init_mat_square(SIZE);
