@@ -231,6 +231,18 @@ int evaluate(char** tokens, int size)
         // Если токен - переменная, добавить в очередь
         if ( !is_operator(tokens[i]) )
         {
+            // Обработка числовых выражений
+            if ( !strcmp(tokens[i], "0") )
+            {
+                push(&stack, "0");
+                continue;
+            }
+
+            if ( !strcmp(tokens[i], "1") )
+            {
+                push(&stack, "1");
+                continue;
+            }
             int value = get_value(tokens[i]);
             snprintf(buffer, MAX_TOKEN_LEN, "%d", value);
             push(&stack, buffer);
