@@ -96,8 +96,13 @@ int main(int argc, char** argv)
         sa.sa_flags = 0;
         sigaction(SIGINT, &sa, NULL);
     } else if ( !strcmp(argv[1], "generate") ) {
-        generate_matrix("a.txt", SIZE, -10, 10);
-        generate_matrix("b.txt", SIZE, -10, 10);
+        int ret_code1 = generate_matrix("a.txt", SIZE, -10, 10);
+        int ret_code2 = generate_matrix("b.txt", SIZE, -10, 10);
+        if ( ret_code1 || ret_code2 )
+            return 3;
+
+        printf(" [i] Матрицы успешно созданы. Теперь можете запустить main.bin signal/sigaction\n");
+        return 0;
     } else {
         fprintf(stderr, "Неверный аргумент!\n");
         fprintf(stderr, "Возможные варианты: signal, sigaction, generate\n");
@@ -111,11 +116,7 @@ int main(int argc, char** argv)
     read_matrix("a.txt", mat_a, SIZE, SIZE, 16384);
     read_matrix("b.txt", mat_b, SIZE, SIZE, 16384);
 
-    // print_mat(mat_a, 4);
-    // print_mat(mat_b, 4);
     matrix_multiply_square(SIZE, mat_a, mat_b, result);
-
-    // print_mat(result, 4);
 
     free_mat_square(mat_a, SIZE);
     free_mat_square(mat_b, SIZE);
