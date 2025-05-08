@@ -75,6 +75,10 @@ int to_postfix(char** tokens, int size, char** postfix)
                     break;
 
                 int top_priority = get_priority(buffer);
+
+                if ( !strcmp(tokens[i], "NOT") && priority <= top_priority )
+                    break;
+
                 if ( priority < top_priority )
                     break;
 
