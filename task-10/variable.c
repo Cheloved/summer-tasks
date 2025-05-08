@@ -1,3 +1,10 @@
+/**
+ * @file variable.c
+ * @brief Реализация функций для работы с введенными переменными
+ *
+ * @author Ракитин Илья Алексеевич
+ */
+
 #include "variable.h"
 
 s_variable* init_vars_arr(int size)
